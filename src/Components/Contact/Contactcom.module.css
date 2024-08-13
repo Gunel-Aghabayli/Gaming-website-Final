@@ -1,0 +1,148 @@
+.bgabout {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/page-bc.jpg");
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  position: relative;
+}
+.content {
+  text-align: center;
+  margin-top: 150px;
+}
+.content h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  color: white;
+}
+.content span {
+  font-family: "Anton", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  clear: both;
+  color: rgba(255, 255, 255, 0);
+  overflow-wrap: break-word;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 2px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 2px;
+}
+.contact {
+  position: absolute;
+  background-color: #fff;
+  top: 640px;
+  width: 100%;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.map {
+  padding: 150px 90px;
+  border: none;
+}
+.office {
+  position: absolute;
+  top: 960px;
+  right: 150px;
+  background-color: #fff;
+  padding: 60px 70px;
+  border-top-left-radius: 30px;
+}
+.office h1 {
+  font-family: "Anton", sans-serif;
+}
+.office h4 {
+  font-family: "Unbounded", sans-serif;
+}
+.office p {
+  font-family: "Unbounded", sans-serif;
+  color: #a3a3a3;
+  font-size: 14px;
+}
+.form {
+  position: absolute;
+  top: 100rem;
+  margin-left: 270px;
+}
+.form hr {
+  width: 100%;
+  text-align: center;
+  height: 4px;
+  background-color: #000;
+  border: none;
+}
+.form p {
+  font-family: "Anton", sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+.form form {
+  display: grid;
+  grid-template-columns: repeat(3, 260px);
+  row-gap: 20px;
+  column-gap: 80px;
+}
+.submit {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  top: 560px;
+  font-family: "Anton", sans-serif;
+  font-size: 16px;
+  border: none;
+  background-color: rgb(45, 244, 161);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: black;
+  color: white;
+}
+.input input {
+  font-family: "Unbounded", sans-serif;
+  border: none;
+  background-color: #f8f8f8;
+  padding: 20px 60px;
+  border-radius: 7px;
+}
+.text textarea {
+  font-family: "Unbounded", sans-serif;
+  border: none;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+.support {
+  position: absolute;
+  top: 140rem;
+}
+.support h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 30px;
+  margin-left: 640px;
+  font-weight: 400;
+}
+.imgs {
+  display: flex;
+  flex-direction: row;
+  margin-left: 200px;
+  gap: 50px;
+  width: 100%;
+}
+.image1 {
+  padding: 30px;
+  border: 3px solid #f8f8f8;
+  width: 260px;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.job {
+  color: #a3a3a3;
+  font-size: 15px;
+  font-weight: 400;
+}

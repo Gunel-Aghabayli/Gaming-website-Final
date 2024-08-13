@@ -1,0 +1,101 @@
+.bgabout {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/page-bc.jpg");
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  position: relative;
+}
+.content {
+  text-align: center;
+  margin-top: 150px;
+}
+.content h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  color: white;
+}
+.content span {
+  font-family: "Anton", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  clear: both;
+  color: rgba(255, 255, 255, 0);
+  overflow-wrap: break-word;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 2px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 2px;
+}
+.contact {
+  position: absolute;
+  background-color: #fff;
+  top: 640px;
+  width: 100%;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.help {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.help h3 {
+  font-size: 54px;
+  color: #000;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+.help h4 {
+  font-family: "Unbounded", sans-serif;
+}
+.help i {
+  font-size: 35px;
+}
+.help span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 25px;
+}
+.faq {
+  position: absolute;
+  top: 110rem;
+  width: 800px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #5a5a5a;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: "Unbounded", sans-serif;
+  font-size: 20px;
+  padding: 20px;
+  margin-left: 60px;
+}
+.faq p {
+  font-weight: 300;
+}
+.marq {
+  position: absolute;
+  top: 90rem;
+}
+.marq p {
+  margin-left: 80px;
+  font-family: "Unbounded", sans-serif;
+  font-size: 40px;
+}
+.imag{
+  position: absolute;
+  top: 110rem;
+  left: 980px;
+}
+.faqPhoto{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

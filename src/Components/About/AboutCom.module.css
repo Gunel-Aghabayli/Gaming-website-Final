@@ -1,0 +1,175 @@
+.bgabout {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/about-bc.jpg");
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  
+}
+.content {
+  text-align: center;
+  margin-top: 150px;
+}
+.content h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  color: white;
+}
+.content span {
+  font-family: "Anton", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  clear: both;
+  color: rgba(255, 255, 255, 0);
+  overflow-wrap: break-word;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 2px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 2px;
+}
+.team {
+  display: flex;
+  justify-content: space-between;
+  padding: 90px 80px;
+  border-radius: 70px;
+  position: absolute;
+  background-color: white;
+  top: 630px;
+  width: 84.9rem;
+}
+.teamphoto {
+  width: 550px;
+  height: 530px;
+  border-radius: 30px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.donen {
+  display: inline-block;
+  animation: rotate 8s linear infinite;
+  position: absolute;
+  right: 180px;
+}
+.studio {
+  position: absolute;
+  top: 110px;
+  right: 240px;
+  font-size: 54px;
+  color: #000000;
+  font-family: "Anton", sans-serif;
+  width: 700px;
+  text-align: start;
+  letter-spacing: 2px;
+}
+.span {
+  color: rgb(45, 244, 161);
+  font-weight: 100;
+}
+.ptag {
+  font-family: "Unbounded", sans-serif;
+  width: 500px;
+  margin-top: 350px;
+  margin-right: 200px;
+}
+.link {
+  color: white;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: "Anton", sans-serif;
+  display: none;
+  width: 300px;
+}
+.value {
+  position: absolute;
+  top: 85rem;
+}
+.header {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+.valuehr {
+  width: 80%;
+  height: 4px;
+  background-color: rgb(45, 244, 161);
+  text-align: center;
+  border: none;
+}
+.leaders {
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  margin: 10px 50px;
+}
+.leaders h2 {
+  font-size: 20px;
+  font-family: "Anton", sans-serif;
+}
+.leaders p {
+  color: #5a5a5a;
+  font-size: 14px;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 400;
+}
+.diversty{
+  position: absolute;
+  top: 120rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+}
+.inclusion{
+  width: 450px;
+  font-family: "Anton", sans-serif;
+}
+.inclusion h1{
+  font-size: 80px;
+}
+.inclusion h2{
+  font-family: "Unbounded", sans-serif;
+  color: #5A5A5A;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+}
+.inclusion h4{
+  font-family: "Unbounded", sans-serif;
+  color: #5A5A5A;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+
+
+
+
+@media (max-width: 800px) {
+  .bgabout {
+    width: 96.5rem;
+  }
+  .link {
+    display: inline;
+    position: absolute;
+    top: 40px;
+    left: 67rem;
+  }
+  .burger {
+  }
+}
+
+

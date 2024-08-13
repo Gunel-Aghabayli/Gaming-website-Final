@@ -1,0 +1,305 @@
+
+
+#bgphoto {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  margin-top: 10px;
+  border-left-color: rgb(90, 90, 90);
+  border-right-color: rgb(90, 90, 90);
+  filter: brightness(90%);
+}
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.donen {
+  display: inline-block;
+  animation: rotate 8s linear infinite;
+}
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1200px;
+  background: url("https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_bg2.jpg");
+  background-size: cover;
+  color: white;
+  opacity: 0.7;
+  border-left-color: rgb(90, 90, 90);
+  border-right-color: rgb(90, 90, 90);
+ 
+}
+.content h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 200px;
+  font-weight: 400;
+  position: absolute;
+  top: 100px;
+  left: 550px;
+  color: white;
+  
+}
+.content h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 200px;
+  font-weight: 400;
+  position: absolute;
+  top: 350px;
+  left: 300px;
+  clear: both;
+  color: rgba(255, 255, 255, 0);
+  overflow-wrap: break-word;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 2px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 2px;
+}
+.content h3 {
+  font-family: "Unbounded", sans-serif;
+  position: absolute;
+  top: 730px;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+  left: 550px;
+}
+.firstButton{
+  position: absolute;
+  top: 800px;
+  left: 660px;
+  font-family: "Anton", sans-serif; 
+  font-size: 16px;
+ 
+  padding: 20px 45px;
+  border-radius: 7px;
+  border: none;
+  background-color: rgb(45, 244, 161);
+  border-bottom-right-radius: 35px ;
+}
+button a{
+  text-decoration: none;
+  color: #000;
+}
+
+
+button:hover{
+  background-color: rgb(211, 231, 211);
+  color: rgb(45, 244, 161);
+  cursor: pointer;
+}
+.explore{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 80px;
+  padding: 90px 20px;
+  position: absolute;
+  top: 1100px;
+  width: 1479px;
+}
+.partOne{
+  width: 537px;
+  display: flex;
+  flex-direction: column;
+
+ 
+}
+.partOne h3{
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: #000000;
+  font-family: "Unbounded", sans-serif;
+}
+.partOne p{
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 300;
+  line-height: 1.8em;
+  color: #5A5A5A;
+  font-family: "Unbounded", sans-serif;
+}
+.partOne a{
+  text-decoration: none;
+  font-family: "Anton", sans-serif;
+  font-size: 16px;
+  color: #000000;
+   height: 90px;
+}
+.partOne a:hover{
+ color: rgb(45, 244, 161);
+}
+.img3{
+   border-radius: 20px;
+}
+.partTwo{
+ position: relative;
+}
+
+.headline p{
+  font-family: "Anton", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 690px;
+  right: 216px;
+  color: #000000;
+  margin: 0;
+}
+.headline h1{
+  font-family: "Anton", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 560px;
+  right: 300px;
+   clear: both;
+  color: rgba(255, 255, 255, 0);
+  overflow-wrap: break-word;
+  stroke: rgb(19, 18, 18);
+  stroke-width: 2px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-color: rgb(10, 9, 9);
+  -webkit-text-stroke-width: 2px;
+  margin: 0;
+  z-index: 9999;
+}
+.img4{
+  margin-top: 200px;
+  border-radius: 20px;
+  position: relative;
+}
+.img5{
+position: absolute;
+left: 250px;
+top: 120px;
+z-index: 9999;
+}
+.partTwo h3{
+  font-family: "Anton", sans-serif;
+  font-size: 24px;
+  color: #000000;
+  margin: 0;
+}
+
+.photos img{
+  margin-left: -20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.photos{
+  display: flex;
+  align-items: center;
+  
+}
+.photos a{
+  text-decoration: none;
+  font-family: "Anton", sans-serif;
+  color: #000000;
+  background-color: rgb(45, 244, 161);
+  padding: 20px 50px;
+  border-radius: 30px;
+}
+.photos a:hover{
+  color: rgb(45, 244, 161);
+  background-color: #000000;
+  transition: all 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+  .explore{
+    width: 1498px;
+  }
+  .overlay{
+    width: 1540px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #bgphoto{
+     width: 1530px;
+  }
+  .content h2{
+    font-size: 190px;
+    left: 570px;
+  }
+  .content h1{
+    font-size: 170px;
+    width: 100%;
+    left: 380px;
+  }
+  .content h3{
+    width: 100%;
+    left: 400px;
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
+  }
+  button{
+    font-size: 30px;
+    width: 400px;
+    padding: 30px;
+    left: 550px;
+  }
+  button a{
+    text-decoration: none;
+  }
+}
+@media (max-width: 500px){
+  .overlay{
+    width: 1540px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #bgphoto{
+     width: 1540px;
+  }
+  .content h2{
+    font-size: 200px;
+    left: 560px;
+  }
+  .content h1{
+    font-size: 200px;
+    width: 1200px;
+    left: 290px;
+  }
+  .content h3{
+    width: 900px;
+    left: 380px;
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
+  }
+  button{
+    font-size: 50px;
+    width: 400px;
+    padding: 30px;
+    left: 550px;
+  }
+}
