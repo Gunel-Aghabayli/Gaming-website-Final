@@ -1,20 +1,26 @@
 import React from "react";
-import style from "./Wish.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "../../AppContext";
-import Navbar from "../Navbar/Navbar";
+import style from "./CartCom.module.css";
 import { toast } from "react-toastify";
-const Wish = () => {
-  const { wishlist, cart, addToCart, removeFromWishlist } = useAppContext();
-  const navigate = useNavigate();
-  const isProductInCart = (product) => {
-    return cart.some((item) => item.id === product.id);
-  };
+import { supabase } from "../../supabase.js";
+import Navbar from "../Navbar/Navbar.jsx";
 
-  const handleAddToCart = (product) => {
-    if (!isProductInCart(product)) {
-      addToCart(product);
+const CartCom = () => {
+  const { cart, removeFromCart } = useAppContext();
+  const navigate = useNavigate();
+
+  const handlePurchase = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (user) {
       toast.success("Added successfully to Cart");
+
+      cart.forEach((product) => removeFromCart(product));
+    } else {
+      alert("Please login to make a purchase.");
+      navigate("/login");
     }
   };
   return (
@@ -24,38 +30,26 @@ const Wish = () => {
           <Navbar />
           <div className={style.content}>
             <h1>
-              YOUR <span>WISHLIST</span>
+              SHOPPING <span>CART</span>
             </h1>
           </div>
         </div>
-        {wishlist.length > 0 ? (
-          wishlist.map((product, index) => (
-            <div key={index} className={style.wishlist}>
+        {cart.length > 0 ? (
+          cart.map((product, index) => (
+            <div key={index} className={style.cart}>
+            
               <img src={product.image} />
               <Link to={`/shops/products?product=${product.id}`}>
-              {product.title}
-            </Link>
+                {product.title}
+              </Link>
               <h3>${product.price}</h3>
-              <button
-                className={style.btn2}
-                onClick={() => removeFromWishlist(product)}
-              >
-                Remove
-              </button>
-              <button
-                className={style.btn2}
-                onClick={() => handleAddToCart(product)}
-                disabled={isProductInCart(product)}
-              >
-                {isProductInCart(product) ? "Already Added" : "Add to Cart"}
-              </button>
-              <button className={style.btn2} onClick={() => navigate("/shop")}>
-                Back to Shop
-              </button>
+              <button className={style.btn3} onClick={() => removeFromCart(product)}>Remove</button>
+              <button  className={style.btn3} onClick={handlePurchase}>Purchase</button>
+              <button className={style.btn3} onClick={() => navigate("/shop")}>Back to Shop</button>
             </div>
           ))
         ) : (
-          <p className={style.noItem}>OOPS..! No products in wishlist.</p>
+          <p className={style.noItem}>OOPS..!No products in the cart</p>
         )}
       </div>
       <div className={style.container}>
@@ -117,4 +111,4 @@ const Wish = () => {
   );
 };
 
-export default Wish;
+export default CartCom;

@@ -1,13 +1,10 @@
 import React from "react";
 import Wish from "../Components/Wishlist/Wish";
 
-
-
 const Wishlist = () => {
   return (
     <div>
-    <Wish/>
-    
+      <Wish />
     </div>
   );
 };

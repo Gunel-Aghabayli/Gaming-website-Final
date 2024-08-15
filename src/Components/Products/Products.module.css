@@ -106,6 +106,42 @@
     flex-direction: row;
     gap: 15px;
 }
+.quantity{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.quantity button{
+  font-family: "Unbounded", sans-serif;
+  font-size: 20px;
+  width: 60px;
+  background-color: #F1ECE7;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+}
+.number{
+  font-family: "Unbounded", sans-serif;
+  font-size: 20px;
+
+}
+.btnS{
+  display: flex;
+  gap: 20px;
+}
+.btn{
+  padding: 15px 30px;
+  background-color: #000;
+  color: #fff;
+  font-family: "Unbounded", sans-serif;
+  border: none;
+  border-radius: 10px;
+}
+.btn:hover{
+  background-color: rgb(45, 244, 161);
+  color: #fff;
+  transition: all .3s;
+}
 .container,
 footer {
   width: 100%;

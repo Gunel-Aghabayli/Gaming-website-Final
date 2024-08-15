@@ -33,7 +33,7 @@ const Shops = () => {
     const search = searchParams.get("search");
 
     if (category && category !== "all") {
-      // Apply category filter
+      
       query = query.eq("category", category);
     }
 
@@ -150,10 +150,11 @@ const Shops = () => {
               value={selectedCategory}
             >
               <option value="all">All Categories</option>
-              <option value="Games">Games</option>
+              <option value="Games, Gifts">Games,Gifts</option>
               <option value="T-Shirt">T-Shirt</option>
               <option value="Figures">Figures</option>
               <option value="Gifts">Gifts</option>
+              
             </select>
 
             <select
@@ -208,7 +209,7 @@ const Shops = () => {
               </div>
             ))
           ) : (
-            <p>Loading products...</p>
+            <p>No products...</p>
           )}
         </div>
       </div>

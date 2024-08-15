@@ -1,8 +1,77 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Testionials.module.css";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
+import { supabase } from "../../supabase";
+import { toast } from "react-toastify";
+import { useAppContext } from "../../AppContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
 const Testimonials = () => {
+  const [products, setProducts] = useState([]);
+
+  const { wishlist, cart, addToWishlist, addToCart } = useAppContext();
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    const { data, error } = await supabase.from("products").select("*");
+
+    if (error) {
+      console.error("Error fetching products:", error);
+    } else {
+      // Only show the first three products
+      setProducts(data.slice(0, 3));
+    }
+  };
+
+  const isProductInWishlist = (product) => {
+    return wishlist.some((item) => item.id === product.id);
+  };
+
+  const isProductInCart = (product) => {
+    return cart.some((item) => item.id === product.id);
+  };
+
+  const handleAddToWishlist = (product) => {
+    if (!isProductInWishlist(product)) {
+      addToWishlist(product);
+      toast.success("Added successfully to Wishlist");
+    }
+  };
+
+  const handleAddToCart = (product) => {
+    if (!isProductInCart(product)) {
+      addToCart(product);
+      toast.success("Added successfully to Cart");
+    }
+  };
+
+  const renderStars = (isNew) => {
+    const filledStars = isNew ? 5 : 4;
+    const totalStars = 5;
+
+    return (
+      <div>
+        {[...Array(filledStars)].map((_, index) => (
+          <FontAwesomeIcon
+            key={index}
+            icon={faStar}
+            style={{ color: "#000", marginRight: "5px" }}
+          />
+        ))}
+        {[...Array(totalStars - filledStars)].map((_, index) => (
+          <FontAwesomeIcon
+            key={index}
+            icon={faStarEmpty}
+            style={{ color: "#000", marginRight: "5px" }}
+          />
+        ))}
+      </div>
+    );
+  };
   return (
     <div>
       <div className={style.reviews}>
@@ -68,10 +137,45 @@ const Testimonials = () => {
             />
           </div>
         </Marquee>
-
-        
-      
-        </div>
+      </div>
+      <h2 className={style.featured}>
+        FEATURED <span>PRODUCTS</span>
+      </h2>
+      <div className={style.shopBox}>
+        {products.length > 0 ? (
+          products.map((product) => (
+            <div className={style.box} key={product.id}>
+              <img src={product.image} alt={product.title} />
+              <Link to={`/shops/products?product=${product.id}`}>
+                {product.title}
+              </Link>
+              <div>{renderStars(product.isNew)}</div>
+              <h3>${product.price}</h3>
+              <div className={style.btnS}>
+                <button
+                  className={style.btn}
+                  onClick={() => handleAddToWishlist(product)}
+                  disabled={isProductInWishlist(product)}
+                >
+                  {isProductInWishlist(product)
+                    ? "Already Added"
+                    : "Add to Wishlist"}
+                </button>
+                <button
+                  className={style.btn}
+                  onClick={() => handleAddToCart(product)}
+                  disabled={isProductInCart(product)}
+                >
+                  {isProductInCart(product) ? "Already Added" : "Add to Cart"}
+                </button>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>Loading products...</p>
+        )}
+      </div>
+      <Link className={style.view} to='/shop'>GO TO SHOP</Link>
     </div>
   );
 };

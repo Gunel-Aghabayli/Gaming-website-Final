@@ -9,6 +9,7 @@ import Wishlist from "./Pages/Wishlist";
 import Login from "./Pages/Login";
 import Cart from "./Pages/Cart";
 import { ThemeProvider } from "./ThemeContext";
+
 import Contact from "./Pages/Contact";
 import ProductsDetail from "./Pages/ProductsDetail";
 import { ToastContainer, toast } from "react-toastify";

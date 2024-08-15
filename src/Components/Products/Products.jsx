@@ -9,12 +9,45 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../AppContext";
+import { toast } from "react-toastify";
 
 const Products = () => {
   const [searchParam] = useSearchParams();
   const selectedProductID = searchParam.get("product");
   const [product, setProduct] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  const { wishlist, cart, addToWishlist, addToCart } = useAppContext();
 
+  const isProductInWishlist = (product) => {
+    return wishlist.some((item) => item.id === product.id);
+  };
+
+  const isProductInCart = (product) => {
+    return cart.some((item) => item.id === product.id);
+  };
+
+  const handleAddToWishlist = (product) => {
+    if (!isProductInWishlist(product)) {
+      addToWishlist(product);
+      toast.success("Added successfully to Wishlist");
+    }
+  };
+
+  const handleAddToCart = (product) => {
+    if (!isProductInCart(product)) {
+      addToCart(product);
+      toast.success("Added successfully to Cart");
+    }
+  };
+  const handleQuantityChange = (type) => {
+    if (type === "increment") {
+      setQuantity(quantity + 1);
+    } else if (type === "decrement" && quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
   useEffect(() => {
     const fetchProduct = async () => {
       if (selectedProductID) {
@@ -78,14 +111,34 @@ const Products = () => {
           <div>{renderStars(product.isNew)}</div>
           <div className={style.line}></div>
           <div className={style.describe}>{product.description}</div>
-          <div className={style.price}>${product.price}</div>
-          <h2>Size:</h2>
-          <div className={style.sizes}>
-            <a className={style.size}>S</a>
-            <a className={style.size}>M</a>
-            <a className={style.size}>L</a>
-            <a className={style.size}>XL</a>
-          </div>
+          <div className={style.price}>${(product.price * quantity).toFixed(2)}</div>
+          <div className={style.quantity}>
+          <button className={style.quantityBtn} onClick={() => handleQuantityChange("decrement")}>
+            -
+          </button>
+          <span className={style.number}>{quantity}</span>
+          <button className={style.quantityBtn} onClick={() => handleQuantityChange("increment")}>
+            +
+          </button>
+        </div>
+          <div className={style.btnS}>
+          <button
+            className={style.btn}
+            onClick={() => handleAddToWishlist(product)}
+            disabled={isProductInWishlist(product)}
+          >
+            {isProductInWishlist(product)
+              ? "Already Added"
+              : "Add to Wishlist"}
+          </button>
+          <button
+            className={style.btn}
+            onClick={() => handleAddToCart(product)}
+            disabled={isProductInCart(product)}
+          >
+            {isProductInCart(product) ? "Already Added" : "Add to Cart"}
+          </button>
+        </div>
           <div className={style.line}></div>
           <h5>Guarantee Safe & Secure Checkout</h5>
           <img

@@ -85,6 +85,7 @@
   display: flex;
   justify-content: space-around;
   gap: 200px;
+  padding: 30px;
 }
 .container {
   background-color: black;
@@ -119,7 +120,7 @@
 .footerContact p {
   color: #a3a3a3;
 }
-.qamico{
+.qamico {
   margin-top: 15px;
 }
 .qamico p {
@@ -131,13 +132,12 @@
 .qamico span {
   color: #a3a3a3;
   font-size: 14px;
-  
 }
-.qamico i{
+.qamico i {
   color: rgb(45, 244, 161);
   font-size: 30px;
 }
-.location{
+.location {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -153,7 +153,7 @@
   padding-top: 1rem;
   position: relative;
 }
-.footerBottom img{
+.footerBottom img {
   position: absolute;
   left: 600px;
 }
@@ -170,12 +170,111 @@
 .icon:hover {
   color: #1f2937;
 }
+.featured {
+  position: absolute;
+  top: 446rem;
+  font-family: "Anton", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 40px;
+  z-index: 9999;
+}
+.featured span{
+  font-family: "Anton", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  clear: both;
+  color: rgba(255, 255, 255, 0);
+  overflow-wrap: break-word;
+  stroke: rgb(19, 18, 18);
+  stroke-width: 2px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-color: rgb(10, 9, 9);
+  -webkit-text-stroke-width: 2px;
+}
+.shopBox {
+  font-family: "Unbounded", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 75%;
+  column-gap: 120px;
+  margin-left: 150px;
+  row-gap: 60px;
+  position: absolute;
+  top: 453rem;
+}
+.shopBox img {
+  width: 278px;
+  height: 278px;
+}
+.box {
+  border-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.box a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+.box a:hover {
+  color: rgb(45, 244, 161);
+}
+.box h2 {
+  font-size: 14px;
+}
+.box h3 {
+  color: rgb(45, 244, 161);
+  color: 16px;
+}
+.btnS {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.btn {
+  font-family: "Anton", sans-serif;
+  font-size: 13px;
+  padding: 10px 30px;
+  background-color: black;
+  color: azure;
+  border: none;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: rgb(45, 244, 161);
+  color: white;
+}
+.view{
+  position: absolute;
+  top: 485rem;
+  width: 90px;
+  left: 700px;
+  font-family: "Anton", sans-serif;
+  text-decoration: none;
+  color: #000;
+ 
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 30px;
+  background-color: rgb(45, 244, 161);
+}
+.view:hover{
+ 
+  background-color: #000;
+  color: rgb(45, 244, 161);
+  
+}
 
 
-
-
-@media (max-width:800px){
-   .reviews{
+@media (max-width: 800px) {
+  .reviews {
     width: 1540px;
-   }
+  }
 }
