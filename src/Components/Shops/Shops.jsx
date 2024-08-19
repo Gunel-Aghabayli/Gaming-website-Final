@@ -14,7 +14,6 @@ const Shops = () => {
   const [products, setProducts] = useState([]);
   const { wishlist, cart, addToWishlist, addToCart } = useAppContext();
   const [searchParams, setSearchParams] = useSearchParams();
-
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedPrice, setSelectedPrice] = useState("all");
@@ -26,14 +25,12 @@ const Shops = () => {
 
   const fetchProducts = async () => {
     let query = supabase.from("products").select("*");
-
     const category = searchParams.get("category");
     const price = searchParams.get("price");
     const rating = searchParams.get("rating");
     const search = searchParams.get("search");
 
     if (category && category !== "all") {
-      
       query = query.eq("category", category);
     }
 
@@ -162,9 +159,11 @@ const Shops = () => {
               value={selectedPrice}
             >
               <option value="all">All Prices</option>
-              <option value="50">Under $40</option>
-              <option value="100">Under $50</option>
-              <option value="200">Under $100</option>
+              <option value="20">Under $20</option>
+              <option value="40">Under $40</option>
+              <option value="60">Under $60</option>
+              <option value="100">Under $100</option>
+              <option value="300">Under $300</option>
             </select>
 
             <select

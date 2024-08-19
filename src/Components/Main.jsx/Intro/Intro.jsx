@@ -86,7 +86,7 @@ const Intro = () => {
             <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_ava2.png" />
             <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_ava3.png" />
             <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_ava4.png" />
-            <Link>JOBS LIST</Link>
+            <Link to='/team'>TEAM</Link>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const CartCom = () => {
       data: { user },
     } = await supabase.auth.getUser();
     if (user) {
-      toast.success("Added successfully to Cart");
+      toast.success("Already bought");
 
       cart.forEach((product) => removeFromCart(product));
     } else {
@@ -34,23 +34,36 @@ const CartCom = () => {
             </h1>
           </div>
         </div>
+        <div className={style.allBoxes}>
         {cart.length > 0 ? (
           cart.map((product, index) => (
             <div key={index} className={style.cart}>
-            
+             <div>
               <img src={product.image} />
+               <h3>${product.price}</h3>
+                </div>
+                <div className={style.butons}> 
+                <div>
               <Link to={`/shops/products?product=${product.id}`}>
                 {product.title}
               </Link>
-              <h3>${product.price}</h3>
+             </div>
+             <div className={style.allBtn}>
               <button className={style.btn3} onClick={() => removeFromCart(product)}>Remove</button>
               <button  className={style.btn3} onClick={handlePurchase}>Purchase</button>
               <button className={style.btn3} onClick={() => navigate("/shop")}>Back to Shop</button>
-            </div>
+              </div>
+              </div>
+              </div>
           ))
         ) : (
-          <p className={style.noItem}>OOPS..!No products in the cart</p>
+          <div className={style.emptyCart}>
+          <img src="https://cdn-icons-png.flaticon.com/128/13791/13791767.png" width='200px' height='200px'/>
+          <p className={style.noItem}>Your cart is currently empty</p>
+          <Link to='/shop'>RETURN TO SHOP</Link>
+          </div>
         )}
+      </div>
       </div>
       <div className={style.container}>
       <div className={style.flexContainer}>

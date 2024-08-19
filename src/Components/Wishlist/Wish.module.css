@@ -42,6 +42,22 @@
 .wishlist a:hover{
   color: rgb(45, 244, 161);
 }
+.emptyList{
+  margin-top: 50px;
+  width: 90rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.emptyList a{
+  background-color: rgb(45, 244, 161);
+  text-decoration: none;
+  padding: 12px 24px;
+  font-family: "Anton", sans-serif;
+  color: #000;
+  border-radius: 10px;
+}
 .wishlist{
     display: flex;
     flex-direction: row;
@@ -63,7 +79,7 @@
 .btn2{
     font-family: "Unbounded", sans-serif;
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
 }
 .btn2:hover{

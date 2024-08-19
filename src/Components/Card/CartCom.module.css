@@ -32,38 +32,68 @@
 .cart {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
-  width: 80%;
+  width: 500px;
   margin: auto;
   border: 1px solid #5a5a5a;
   margin-top: 50px;
   border-radius: 20px;
   font-family: "Unbounded", sans-serif;
 }
+.allBoxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 .cart img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 .cart a {
   text-decoration: none;
   color: black;
   font-weight: 500;
+  margin-bottom: 80px;
+}
+.allBtn {
+  display: flex;
+  gap: 10px;
 }
 .cart a:hover {
-  color: rgb(45, 244, 161);
 }
-.cart h3{
-    color: rgb(45, 244, 161);
+.cart h3 {
+  color: black;
+  padding-left: 50px;
 }
-.btn3{
-    font-family: "Unbounded", sans-serif;
-    padding: 10px;
-    border-radius: 30px;
-    border: none;
+.butons {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
-.btn3:hover{
-    color: black;
+.btn3 {
+  font-family: "Unbounded", sans-serif;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(45, 244, 161);
+}
+.emptyCart{
+  margin-top: 50px;
+  width: 90rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.emptyCart a{
+  background-color: rgb(45, 244, 161);
+  text-decoration: none;
+  padding: 12px 24px;
+  font-family: "Anton", sans-serif;
+  color: #000;
+  border-radius: 10px;
+}
+.btn3:hover {
+  color: black;
 }
 .container,
 footer {
@@ -127,7 +157,6 @@ footer {
   gap: 20px;
   margin-top: 30px;
 }
-
 .footerBottom {
   display: flex;
   justify-content: space-between;
@@ -155,12 +184,11 @@ footer {
 .footerBottom span {
   color: #fff;
 }
-.noItem{
+.noItem {
   font-family: "Unbounded", sans-serif;
   font-size: 30px;
   display: flex;
   justify-content: center;
-
 }
 
 @media (max-width: 800px) {

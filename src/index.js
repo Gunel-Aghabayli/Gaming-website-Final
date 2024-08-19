@@ -5,9 +5,12 @@ import App from './App';
 import { AppProvider } from './AppContext';
 import { WishlistProvider } from "./WishlistContext";
 import { AuthProvider, useAuth } from './AuthContext';
+import { Provider } from 'react-redux';
+import store from './reducers/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Provider store={store}>
   <AuthProvider>
   <AppProvider>
     <WishlistProvider>
@@ -15,6 +18,7 @@ root.render(
     </WishlistProvider>
   </AppProvider>
   </AuthProvider>
+  </Provider>
 );
 
 

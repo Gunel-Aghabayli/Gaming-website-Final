@@ -1,0 +1,46 @@
+.bgabout {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+    url("https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h4_bg2.jpg");
+  width: 100%;
+ 
+  height: 729px;
+  background-size: cover;
+}
+.content {
+  text-align: center;
+}
+.content h1 {
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-size: 170px;
+  font-weight: 400;
+  color: #f42d39;
+  margin-top: 0;
+}
+.content img {
+  position: absolute;
+  top: 150px;
+  left: 650px;
+}
+.content h2 {
+  font-size: 70px;
+  color: #fff;
+  font-family: "Anton", sans-serif;
+  margin-bottom: 0;
+}
+.content h3 {
+  font-family: "Unbounded", sans-serif;
+  margin: 0;
+  font-size: 30px;
+  color: #b63737;
+}
+.firstButton {
+  font-family: "Anton", sans-serif;
+  font-size: 16px;
+  padding: 20px 45px;
+  border-radius: 7px;
+  border: none;
+  background-color: rgb(45, 244, 161);
+  border-bottom-right-radius: 35px;
+  margin-top: 15px;
+}

@@ -55,7 +55,11 @@ const Wish = () => {
             </div>
           ))
         ) : (
-          <p className={style.noItem}>OOPS..! No products in wishlist.</p>
+          <div className={style.emptyList}>
+          <img src="https://michaelcojeweler.com/assets/images/empty-wishlist.png" width='300px' height='200px'/>
+          <p className={style.noItem}>OOPS..!Your wishlist is currently empty</p>
+          <Link to='/shop'>RETURN TO SHOP</Link>
+          </div>
         )}
       </div>
       <div className={style.container}>

@@ -277,4 +277,15 @@
   .reviews {
     width: 1540px;
   }
+  .box{
+    width: 300px;
+  }
+  .featured{
+    margin-left: 340px;
+  }
+}
+@media (max-width: 500px){
+  .featured{
+    margin-left: 500px;
+  }
 }
