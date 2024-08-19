@@ -9,10 +9,7 @@ const AboutCom = () => {
     <div>
       <div className={style.bgabout}>
         <Navbar />
-        <Link to="/home" className={style.link}>
-          {" "}
-          Go Back Home
-        </Link>
+       
         <div className={style.content}>
           <h1>
             THE <span>STORIES</span>
