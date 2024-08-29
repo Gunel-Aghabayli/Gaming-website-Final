@@ -1,4 +1,3 @@
-
 import { createStore } from 'redux';
 import teamReducer from './reducer';
 

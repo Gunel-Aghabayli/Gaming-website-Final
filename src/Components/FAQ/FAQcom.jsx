@@ -10,37 +10,37 @@ export const FAQcom = () => {
     {
       question: "What should I do if I’m having technical difficulties?",
       answer:
-        "Vestibulum eu quam nec neque pellentesque efficitur id eget nisl. Proin porta est convallis lacus blandit pretium sed non enim. Maecenas lacinia non orci at aliquam. Donec finibus, urna bibendum ultricies laoreet, augue eros luctus sapien, ut euismod leo tortor ac enim. In hac habitasse platea dictumst. Sed cursus venenatis tellus, non lobortis diam volutpat sit amet.",
+        "If you’re experiencing technical difficulties, please contact our support team through our website or help center. We’re here to assist you with any issues you may encounter.",
     },
     {
       question: "Can we start any time of year?",
       answer:
-        "Vestibulum eu quam nec neque pellentesque efficitur id eget nisl. Proin porta est convallis lacus blandit pretium sed non enim. Maecenas lacinia non orci at aliquam. Donec finibus, urna bibendum ultricies laoreet, augue eros luctus sapien, ut euismod leo tortor ac enim. In hac habitasse platea dictumst. Sed cursus venenatis tellus, non lobortis diam volutpat sit amet..",
+        "Yes, you can start at any time of the year! There’s no specific time required to begin enjoying our products or services.",
     },
     {
       question: "Are you going to keep making games?",
       answer:
-        "Vestibulum eu quam nec neque pellentesque efficitur id eget nisl. Proin porta est convallis lacus blandit pretium sed non enim. Maecenas lacinia non orci at aliquam. Donec finibus, urna bibendum ultricies laoreet, augue eros luctus sapien, ut euismod leo tortor ac enim. In hac habitasse platea dictumst. Sed cursus venenatis tellus, non lobortis diam volutpat sit amet.",
+        "Absolutely! We’re dedicated to continuing the development of new games and bringing fresh, exciting content to our players.",
     },
     {
       question: "How can I get in touch with you?",
       answer:
-        "Vestibulum eu quam nec neque pellentesque efficitur id eget nisl. Proin porta est convallis lacus blandit pretium sed non enim. Maecenas lacinia non orci at aliquam. Donec finibus, urna bibendum ultricies laoreet, augue eros luctus sapien, ut euismod leo tortor ac enim. In hac habitasse platea dictumst. Sed cursus venenatis tellus, non lobortis diam volutpat sit amet.",
+        "You can reach out to us through our official website, email, or social media channels. We’re always open to hearing from our community and addressing any concerns or feedback.",
     },
     {
       question: "In which countries can I find your company?",
       answer:
-        "Vestibulum eu quam nec neque pellentesque efficitur id eget nisl. Proin porta est convallis lacus blandit pretium sed non enim. Maecenas lacinia non orci at aliquam. Donec finibus, urna bibendum ultricies laoreet, augue eros luctus sapien, ut euismod leo tortor ac enim. In hac habitasse platea dictumst. Sed cursus venenatis tellus, non lobortis diam volutpat sit amet.",
+        "Our company has a presence in multiple countries across the globe, including North America, Europe, and Asia. You can find our offices and operations in key regions worldwide.",
     },
     {
       question: "In which countries can I find your company?",
       answer:
-        "Vestibulum eu quam nec neque pellentesque efficitur id eget nisl. Proin porta est convallis lacus blandit pretium sed non enim. Maecenas lacinia non orci at aliquam. Donec finibus, urna bibendum ultricies laoreet, augue eros luctus sapien, ut euismod leo tortor ac enim. In hac habitasse platea dictumst. Sed cursus venenatis tellus, non lobortis diam volutpat sit amet.",
+        "We are a passionate team of developers, designers, and innovators dedicated to creating high-quality games that entertain and engage players around the world.",
     },
     {
       question: "Can I customize my games?",
       answer:
-        "Vestibulum eu quam nec neque pellentesque efficitur id eget nisl. Proin porta est convallis lacus blandit pretium sed non enim. Maecenas lacinia non orci at aliquam. Donec finibus, urna bibendum ultricies laoreet, augue eros luctus sapien, ut euismod leo tortor ac enim. In hac habitasse platea dictumst. Sed cursus venenatis tellus, non lobortis diam volutpat sit amet.",
+        "Customization options are available in many of our games. We strive to offer features that allow players to personalize their gaming experience to suit their preferences.",
     },
   ];
 

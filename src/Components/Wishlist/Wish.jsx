@@ -83,14 +83,14 @@ const Wish = () => {
         </div>
         <div className={style.footerLinks}>
           <h5>Our Studio</h5>
-          <Link>Home</Link>
-          <Link>About Us</Link>
-          <Link>Blog</Link>
+          <Link to='/'>Home</Link>
+          <Link to='/about'>About Us</Link>
+          <Link to='/contact'>Contact us</Link>
         </div>
         <div className={style.footerLinks}>
           <h5>Services</h5>
-          <Link>Shop</Link>
-          <Link>FAQ</Link>
+          <Link to='/shop'>Shop</Link>
+          <Link to='/faq'>FAQ</Link>
         </div>
         <div className={style.footerContact}>
           <h5>Say Hello</h5>

@@ -1,9 +1,11 @@
 import React from "react";
 import style from "./Footer.module.css";
 import { Link } from "react-router-dom";
+import ScrollToTopButton from "../ScrollButton/ScrollButton";
 const Footer = () => {
   return (
     <div className={style.container}>
+    <ScrollToTopButton/>
       <div className={style.flexContainer}>
         <div className={style.qamico}>
           <a href="../../Pages/Home.jsx" className={style.brand}>

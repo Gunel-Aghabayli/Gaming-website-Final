@@ -17,6 +17,7 @@ import Not404 from "./Pages/Not404";
 import ThanksPage from "./Pages/ThanksPage";
 import Team from "./Pages/Team";
 import TeamDetail from "./Pages/TeamDetail";
+import AdminPage from "./Pages/AdminPage";
 const App = () => {
   return (
     <ThemeProvider>
@@ -35,6 +36,7 @@ const App = () => {
           <Route path='/thanks' element={<ThanksPage/>}/>
           <Route path='/team' element={<Team/>}/>
           <Route path='/teammates' element={<TeamDetail/>}/>
+          <Route path='/admin' element={<AdminPage/>}/>
         </Routes>
         <ToastContainer />
       </BrowserRouter>

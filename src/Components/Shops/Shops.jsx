@@ -21,14 +21,14 @@ const Shops = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, [searchParams]);
+  }, [searchParams, searchQuery]);
 
   const fetchProducts = async () => {
     let query = supabase.from("products").select("*");
-    const category = searchParams.get("category");
-    const price = searchParams.get("price");
-    const rating = searchParams.get("rating");
-    const search = searchParams.get("search");
+
+    const category = searchParams.get("category") || selectedCategory;
+    const price = searchParams.get("price") || selectedPrice;
+    const rating = searchParams.get("rating") || selectedRating;
 
     if (category && category !== "all") {
       query = query.eq("category", category);
@@ -42,8 +42,8 @@ const Shops = () => {
       query = query.eq("isNew", rating === "5");
     }
 
-    if (search) {
-      query = query.ilike("title", `%${search}%`);
+    if (searchQuery) {
+      query = query.ilike("title", `%${searchQuery}%`);
     }
 
     const { data, error } = await query;
@@ -55,8 +55,10 @@ const Shops = () => {
     }
   };
 
-  const handleSearch = () => {
-    setSearchParams({ search: searchQuery });
+  const handleSearchQueryChange = (e) => {
+    setSearchQuery(e.target.value);
+    // Immediately fetch products as the search query changes
+    fetchProducts();
   };
 
   const handleFilterChange = (filterType, value) => {
@@ -67,6 +69,19 @@ const Shops = () => {
       } else {
         params.set(filterType, value);
       }
+
+      // Update the state to reflect the selected value
+      if (filterType === "category") {
+        setSelectedCategory(value);
+      } else if (filterType === "price") {
+        setSelectedPrice(value);
+      } else if (filterType === "rating") {
+        setSelectedRating(value);
+      }
+
+      // Fetch products with the updated filters
+      fetchProducts();
+
       return params;
     });
   };
@@ -133,10 +148,10 @@ const Shops = () => {
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={handleSearchQueryChange}
               placeholder="Search products by name..."
             />
-            <button onClick={handleSearch}>
+            <button onClick={fetchProducts}>
               <FontAwesomeIcon icon={faSearch} />
             </button>
           </div>
@@ -147,11 +162,10 @@ const Shops = () => {
               value={selectedCategory}
             >
               <option value="all">All Categories</option>
-              <option value="Games, Gifts">Games,Gifts</option>
+              <option value="Games,Gifts">Games,Gifts</option>
               <option value="T-Shirt">T-Shirt</option>
               <option value="Figures">Figures</option>
               <option value="Gifts">Gifts</option>
-              
             </select>
 
             <select
@@ -227,20 +241,20 @@ const Shops = () => {
             </p>
             <hr />
             <div className={style.location}>
-              <i class="fa-regular fa-building"></i>
+              <i className="fa-regular fa-building"></i>
               <span>2972 Westheimer Rd. Santa Ana, Illinois 85486</span>
             </div>
           </div>
           <div className={style.footerLinks}>
             <h5>Our Studio</h5>
-            <Link>Home</Link>
-            <Link>About Us</Link>
-            <Link>Blog</Link>
+            <Link to="/">Home</Link>
+            <Link to="/about">About Us</Link>
+            <Link to="/contact">Contact us</Link>
           </div>
           <div className={style.footerLinks}>
             <h5>Services</h5>
-            <Link>Shop</Link>
-            <Link>FAQ</Link>
+            <Link to="/shop">Shop</Link>
+            <Link to="/faq">FAQ</Link>
           </div>
           <div className={style.footerContact}>
             <h5>Say Hello</h5>
@@ -250,20 +264,9 @@ const Shops = () => {
         </div>
         <div className={style.footerBottom}>
           <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/ft-img.png" />
+          <div className={style.footerBottomContent}>
           <span>© 2023 Qamico™. All Rights Reserved.</span>
-          <div className={style.socialIcons}>
-            <a href="#" className={style.icon}>
-              <i className="fab fa-facebook"></i>
-            </a>
-            <a href="#" className={style.icon}>
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className={style.icon}>
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className={style.icon}>
-              <i class="fa-brands fa-youtube"></i>
-            </a>
+        
           </div>
         </div>
       </div>
@@ -272,3 +275,6 @@ const Shops = () => {
 };
 
 export default Shops;
+
+
+

@@ -1,0 +1,57 @@
+.adminHead {
+  font-family: "Anton", sans-serif;
+
+  background-color: black;
+  text-align: center;
+  color: white;
+  width: 100%;
+  font-weight: 300;
+}
+.ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 60px;
+  justify-items: center;
+}
+.ul li {
+  width: 450px;
+  border: 1px solid #5a5a5a;
+  padding: 20px;
+  border-radius: 20px;
+}
+.member {
+  text-align: center;
+}
+.edit {
+  font-family: "Unbounded", sans-serif;
+  background-color: greenyellow;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 20px;
+}
+.delete {
+  font-family: "Unbounded", sans-serif;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 20px;
+  margin-left: 10px;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.inputs input {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  width: 400px;
+}
+.save {
+  font-family: "Unbounded", sans-serif;
+  background-color: greenyellow;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 20px;
+}

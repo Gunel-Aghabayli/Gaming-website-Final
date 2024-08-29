@@ -1,15 +1,28 @@
-import React from "react";
-import { useState } from "react";
-import style from "./Navbar.module.css";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
+import { Avatar, Dropdown, Menu } from 'antd';
+import { useAuth } from "../../AuthContext";
+import { useAppContext } from "../../AppContext"; // Importing the context to access cart and wishlist
+import style from "./Navbar.module.css";
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const { user, isLoggedIn, logOut } = useAuth();
+  const { cart, wishlist } = useAppContext(); // Destructuring cart and wishlist from context
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const menu = (
+    <Menu>
+      <Menu.Item key="1" onClick={logOut}>
+        Log Out
+      </Menu.Item>
+    </Menu>
+  );
 
   return (
     <div>
@@ -45,14 +58,31 @@ const Navbar = () => {
           </li>
         </ul>
         <div className={style.icons}>
-          <NavLink to="/login">
-            <i class="fa-regular fa-user"></i>
+          {isLoggedIn ? (
+            <Dropdown overlay={menu} trigger={['click']}>
+              <Avatar
+                style={{ backgroundColor: '#00a2ae', cursor: 'pointer' }} 
+                size="small"
+              >
+                {user.email.charAt(0).toUpperCase()} 
+              </Avatar>
+            </Dropdown>
+          ) : (
+            <NavLink to="/login">
+              <i className="fa-regular fa-user"></i>
+            </NavLink>
+          )}
+          <NavLink to="/wishlist" className={style.iconWrapper}>
+            <i className="fa-regular fa-heart"></i>
+            {wishlist.length > 0 && (
+              <span className={style.badge}>{wishlist.length}</span>
+            )}
           </NavLink>
-          <NavLink to="/wishlist">
-            <i class="fa-regular fa-heart"></i>
-          </NavLink>
-          <NavLink to="/cart">
-            <i class="fa-solid fa-cart-shopping"></i>
+          <NavLink to="/cart" className={style.iconWrapper}>
+            <i className="fa-solid fa-cart-shopping"></i>
+            {cart.length > 0 && (
+              <span className={style.badge}>{cart.length}</span>
+            )}
           </NavLink>
         </div>
       </div>
