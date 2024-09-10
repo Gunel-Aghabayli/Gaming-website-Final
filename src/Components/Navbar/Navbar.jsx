@@ -1,21 +1,26 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
+import { useTranslation } from "react-i18next";
 import { Avatar, Dropdown, Menu } from 'antd';
 import { useAuth } from "../../AuthContext";
-import { useAppContext } from "../../AppContext"; // Importing the context to access cart and wishlist
+import { useAppContext } from "../../AppContext"; 
 import style from "./Navbar.module.css";
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const { user, isLoggedIn, logOut } = useAuth();
-  const { cart, wishlist } = useAppContext(); // Destructuring cart and wishlist from context
-
+  const { cart, wishlist } = useAppContext(); 
+  const { i18n } = useTranslation();
+  const [language, setLanguage] = useState('ENG');
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  const changeLanguage = (lang, abbreviation) => {
+    i18n.changeLanguage(lang); 
+    setLanguage(abbreviation); 
+  };
   const menu = (
     <Menu>
       <Menu.Item key="1" onClick={logOut}>
@@ -23,7 +28,16 @@ const Navbar = () => {
       </Menu.Item>
     </Menu>
   );
-
+  const languageMenu = (
+    <Menu className={style.lang}>
+      <Menu.Item key="en" onClick={() => changeLanguage('en', 'ENG')}>
+        English
+      </Menu.Item>
+      <Menu.Item key="aze" onClick={() => changeLanguage('aze', 'AZE')}>
+        Azerbaijani
+      </Menu.Item>
+    </Menu>
+  );
   return (
     <div>
       <div className={`${style.navbar} ${darkMode ? style.dark : ""}`}>
@@ -84,6 +98,12 @@ const Navbar = () => {
               <span className={style.badge}>{cart.length}</span>
             )}
           </NavLink>
+          <Dropdown overlay={languageMenu} trigger={['click']}>
+         
+          <span className={style.languageToggle} style={{ cursor: 'pointer' }}>
+            {language}
+          </span>
+        </Dropdown>
         </div>
       </div>
       <div className={style.burger} onClick={toggleMenu}>
@@ -94,3 +114,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+

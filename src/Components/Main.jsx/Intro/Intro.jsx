@@ -2,8 +2,10 @@ import React from "react";
 import Navbar from "../../Navbar/Navbar";
 import style from "./Intro.module.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Intro = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div>

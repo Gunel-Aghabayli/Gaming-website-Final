@@ -204,7 +204,15 @@ ul li a:hover {
   font-size: 2.75rem;
   color: #fff;
 }
-
+.lang{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.languageToggle {
+  font-size: 16px;
+  font-weight: bold;
+}
 .toggle {
   cursor: pointer;
   font-size: 1.5rem;

@@ -16,8 +16,7 @@ const Products = () => {
   const [searchParam] = useSearchParams();
   const selectedProductID = searchParam.get("product");
   const [product, setProduct] = useState(null);
-  const [products, setProducts] = useState([]);
-  const [quantity, setQuantity] = useState(1);
+
   const { wishlist, cart, addToWishlist, addToCart } = useAppContext();
 
   const isProductInWishlist = (product) => {
@@ -41,13 +40,7 @@ const Products = () => {
       toast.success("Added successfully to Cart");
     }
   };
-  const handleQuantityChange = (type) => {
-    if (type === "increment") {
-      setQuantity(quantity + 1);
-    } else if (type === "decrement" && quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
+
   useEffect(() => {
     const fetchProduct = async () => {
       if (selectedProductID) {
@@ -111,16 +104,8 @@ const Products = () => {
           <div>{renderStars(product.isNew)}</div>
           <div className={style.line}></div>
           <div className={style.describe}>{product.description}</div>
-          <div className={style.price}>${(product.price * quantity).toFixed(2)}</div>
-          <div className={style.quantity}>
-          <button className={style.quantityBtn} onClick={() => handleQuantityChange("decrement")}>
-            -
-          </button>
-          <span className={style.number}>{quantity}</span>
-          <button className={style.quantityBtn} onClick={() => handleQuantityChange("increment")}>
-            +
-          </button>
-        </div>
+          
+
           <div className={style.btnS}>
           <button
             className={style.btn}

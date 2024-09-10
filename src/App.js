@@ -18,7 +18,13 @@ import ThanksPage from "./Pages/ThanksPage";
 import Team from "./Pages/Team";
 import TeamDetail from "./Pages/TeamDetail";
 import AdminPage from "./Pages/AdminPage";
+import Checkout from "./Pages/Checkout";
+import { useTranslation } from 'react-i18next';
 const App = () => {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
   return (
     <ThemeProvider>
       <BrowserRouter>
@@ -37,7 +43,8 @@ const App = () => {
           <Route path='/team' element={<Team/>}/>
           <Route path='/teammates' element={<TeamDetail/>}/>
           <Route path='/admin' element={<AdminPage/>}/>
-        </Routes>
+          <Route path='/checkout' element={<Checkout/>}/>
+        </Routes> 
         <ToastContainer />
       </BrowserRouter>
     </ThemeProvider>
