@@ -89,13 +89,24 @@
   font-family: "Unbounded", sans-serif;
   font-size: 40px;
 }
-.imag{
+.imag {
   position: absolute;
   top: 110rem;
   left: 980px;
 }
-.faqPhoto{
+.faqPhoto {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+@media (max-width: 800px) {
+  .bgabout {
+    width: 1540px;
+  }
+  .contact {
+    width: 1540px;
+  }
+  .marq{
+    width: 1540px;
+  }
 }

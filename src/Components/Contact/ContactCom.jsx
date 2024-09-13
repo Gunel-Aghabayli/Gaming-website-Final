@@ -67,7 +67,7 @@ const ContactCom = () => {
           <div className={style.input}>
             <input
               type="text"
-              placeholder="Name*"
+              placeholder="Name*" 
               id="name"
               name="name"
               value={formData.name}
@@ -109,7 +109,7 @@ const ContactCom = () => {
               required
             />
           </div>
-          <button className={style.submit} type="submit">
+          <button className={style.submit2} type="submit">
             Submit
           </button>
         </form>

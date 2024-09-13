@@ -57,7 +57,6 @@ const Shops = () => {
 
   const handleSearchQueryChange = (e) => {
     setSearchQuery(e.target.value);
-    // Immediately fetch products as the search query changes
     fetchProducts();
   };
 
@@ -69,8 +68,6 @@ const Shops = () => {
       } else {
         params.set(filterType, value);
       }
-
-      // Update the state to reflect the selected value
       if (filterType === "category") {
         setSelectedCategory(value);
       } else if (filterType === "price") {
@@ -78,8 +75,6 @@ const Shops = () => {
       } else if (filterType === "rating") {
         setSelectedRating(value);
       }
-
-      // Fetch products with the updated filters
       fetchProducts();
 
       return params;
@@ -151,8 +146,8 @@ const Shops = () => {
               onChange={handleSearchQueryChange}
               placeholder="Search products by name..."
             />
-            <button onClick={fetchProducts}>
-              <FontAwesomeIcon icon={faSearch} />
+            <button className={style.butSearch} onClick={fetchProducts}>
+              <FontAwesomeIcon className={style.search} icon={faSearch} />
             </button>
           </div>
 
@@ -265,8 +260,7 @@ const Shops = () => {
         <div className={style.footerBottom}>
           <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/ft-img.png" />
           <div className={style.footerBottomContent}>
-          <span>© 2023 Qamico™. All Rights Reserved.</span>
-        
+            <span>© 2023 Qamico™. All Rights Reserved.</span>
           </div>
         </div>
       </div>
@@ -275,6 +269,3 @@ const Shops = () => {
 };
 
 export default Shops;
-
-
-

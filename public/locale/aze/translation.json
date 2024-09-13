@@ -1,9 +1,11 @@
 {
-    "home": "Ana səhifə",
-    "about": "Haqqımızda",
-    "shop": "Mağaza",
-    "faq": "Sual-Cavab",
-    "contact": "Əlaqə",
-    "ourProjects": "LAYİHƏLƏRİMİZ"
-  }
-  
+  "home": "Ana Səhifə",
+  "about": "Haqqımızda",
+  "shop": "Mağaza",
+  "faq": "FAQ",
+  "contact": "Əlaqə",
+  "logOut": "Çıxış",
+  "wishlist": "Arzulist",
+  "cart": "Səbət",
+  "login": "Giriş"
+}

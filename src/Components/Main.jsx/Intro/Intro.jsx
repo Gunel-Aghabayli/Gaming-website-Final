@@ -3,11 +3,12 @@ import Navbar from "../../Navbar/Navbar";
 import style from "./Intro.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
+import { useTheme } from "../../../ThemeContext";
 const Intro = () => {
   const { t } = useTranslation();
+  const { darkMode } = useTheme();
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div>
         <img
           fetchpriority="high"

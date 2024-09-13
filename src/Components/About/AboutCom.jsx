@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./AboutCom.module.css";
-import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useState } from "react";
@@ -209,7 +208,7 @@ const AboutCom = () => {
       </div>
       <Footer />
     </div>
-  );
+);
 };
 
 export default AboutCom;

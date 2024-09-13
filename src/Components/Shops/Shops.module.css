@@ -36,7 +36,6 @@
   column-gap: 60px;
   margin: auto;
   row-gap: 60px;
-  
 }
 .shopBox img {
   width: 278px;
@@ -52,9 +51,8 @@
   text-decoration: none;
   color: black;
   font-weight: 500;
- 
 }
-.box a:hover{
+.box a:hover {
   color: rgb(45, 244, 161);
 }
 .box h2 {
@@ -178,15 +176,14 @@ footer {
   justify-content: space-around;
   margin: 20px 0;
 }
-.filters select{
+.filters select {
   font-family: "Unbounded", sans-serif;
 }
 .searchBox {
   display: flex;
   align-items: center;
-  
 }
-.searchBox input{
+.searchBox input {
   font-family: "Unbounded", sans-serif;
 }
 
@@ -217,14 +214,39 @@ footer {
   border-radius: 4px;
 }
 
-
-
-
-
-
-
 @media (max-width: 800px) {
+  .bgabout {
+    width: 1540px;
+  }
   .container {
     width: 1540px;
+  }
+  .filterSection {
+    margin-left: 350px;
+    gap: 60px;
+  }
+  .shopBox {
+    margin-left: 230px;
+  }
+}
+@media (max-width: 500px) {
+  .bgabout {
+    width: 1540px;
+  }
+  .searchBox {
+    width: 400px;
+  }
+  .search {
+    width: 20px;
+  }
+  .searchBox input {
+    height: 50px;
+  }
+  .butSearch {
+    width: 70px;
+    height: 70px;
+  }
+  .box{
+    width: 300px;
   }
 }

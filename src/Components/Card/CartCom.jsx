@@ -114,8 +114,7 @@ const CartCom = () => {
         </div>
       </div>
       <div className={style.container}>
-      
-        <div className={style.flexContainer}>
+      <div className={style.flexContainer}>
           <div className={style.qamico}>
             <a href="../../Pages/Home.jsx" className={style.brand}>
               <img

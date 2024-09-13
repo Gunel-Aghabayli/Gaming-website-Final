@@ -214,4 +214,40 @@ footer {
   .container {
     width: 1540px;
   }
+  .bgabout{
+    width: 1540px;
+  }
+  .totalPrice{
+    width: 400px;
+  }
+  .allBoxes{
+    width: 1500px;
+  }
+  .quantity{
+    width: 300px;
+  }
+  .totalPrice{
+    width: 600px;
+  }
+}
+@media (max-width: 500px){
+  .allBoxes{
+    width: 1400px;
+    margin-left: 25px;
+    gap: 30px;
+  }
+  .cart{
+    width: 700px;
+  }
+  .quantity{
+    width: 100px;
+  }
+  .btn3{
+    width: 170px;
+    height: 60px;
+    font-size: 17px;
+  }
+  .butons a{
+    font-size: 27px;
+  }
 }

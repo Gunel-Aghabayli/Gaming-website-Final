@@ -20,12 +20,10 @@ import TeamDetail from "./Pages/TeamDetail";
 import AdminPage from "./Pages/AdminPage";
 import Checkout from "./Pages/Checkout";
 import { useTranslation } from 'react-i18next';
+
 const App = () => {
-  const { t, i18n } = useTranslation();
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-  };
-  return (
+ 
+return (
     <ThemeProvider>
       <BrowserRouter>
         <Routes>

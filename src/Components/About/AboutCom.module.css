@@ -4,7 +4,6 @@
   width: 100%;
   height: 700px;
   background-size: cover;
-  
 }
 .content {
   text-align: center;
@@ -124,31 +123,31 @@
   font-family: "Unbounded", sans-serif;
   font-weight: 400;
 }
-.diversty{
+.diversty {
   position: absolute;
   top: 120rem;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
 }
-.inclusion{
+.inclusion {
   width: 450px;
   font-family: "Anton", sans-serif;
 }
-.inclusion h1{
+.inclusion h1 {
   font-size: 80px;
 }
-.inclusion h2{
+.inclusion h2 {
   font-family: "Unbounded", sans-serif;
-  color: #5A5A5A;
+  color: #5a5a5a;
   font-size: 18px;
   line-height: 30px;
   font-weight: 400;
 }
-.inclusion h4{
+.inclusion h4 {
   font-family: "Unbounded", sans-serif;
-  color: #5A5A5A;
+  color: #5a5a5a;
   font-size: 14px;
   line-height: 30px;
   font-weight: 300;
@@ -156,7 +155,7 @@
 
 @media (max-width: 800px) {
   .bgabout {
-   width: 1540px;
+    width: 1540px;
   }
   .link {
     display: inline;
@@ -164,14 +163,7 @@
     top: 40px;
     left: 67rem;
   }
-  
 }
-
-
-
-
-
-
 
 /* //navbar// */
 
@@ -254,7 +246,6 @@ ul li a:hover {
   display: none;
 }
 
-
 .iconWrapper {
   position: relative;
   display: inline-block;
@@ -273,20 +264,18 @@ ul li a:hover {
   z-index: 1;
 }
 
-
 @media (max-width: 800px) {
-  .navbar{
+  .navbar {
     display: flex;
     flex-direction: row;
-    
   }
-  .team{
+  .team {
     width: 1380px;
   }
-  .value{
+  .value {
     width: 1500px;
   }
-  .diversty{
+  .diversty {
     width: 1500px;
   }
   .navbar img {
@@ -303,35 +292,6 @@ ul li a:hover {
     font-size: 60px;
     position: absolute;
     left: 650px;
-  }
-  .navbarLinks.active {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 80px;
-    position: absolute;
-    top: 0px;
-    background-color: light-dark(#efedea, #223a2c);
-    left: 0;
-    width: 30%;
-    padding: 2rem;
-    font-size: 40px;
-    font-weight: 600;
-    margin-top: 0;
-    opacity: 1;
-  }
-  .navbarLinks img {
-    display: flex;
-    opacity: 1;
-    margin-right: 120px;
-    margin-top: 10px;
-  }
-
-  .navbarLinks li a {
-    color: #000;
-  }
-  .burger {
-    display: block;
   }
 }
 .navbar {
@@ -391,7 +351,7 @@ ul li a:hover {
   font-size: 2.75rem;
   color: #fff;
 }
-.lang{
+.lang {
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -439,31 +399,31 @@ ul li a:hover {
   }
   .burger i {
     font-size: 60px;
-    
   }
-.navbarLinks.active {
+  .navbarLinks.active {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 80px;
+    gap: 50px;
     position: absolute;
     top: 0px;
     background-color: light-dark(#efedea, #223a2c);
     left: 0;
-    width: 30%;
+    width: 50%;
     padding: 2rem;
     font-size: 40px;
     font-weight: 600;
     margin-top: 0;
     opacity: 1;
+    z-index: 9999;
   }
-.navbarLinks img {
+  .navbarLinks img {
     display: flex;
     opacity: 1;
     margin-right: 120px;
     margin-top: 10px;
   }
-.navbarLinks li a {
+  .navbarLinks li a {
     color: #000;
   }
   .burger {
@@ -471,15 +431,11 @@ ul li a:hover {
   }
 }
 
-
-
-
-
 @media (max-width: 500px) {
-   .burger i{
+  .burger i {
     position: absolute;
     left: 900px;
-   }
+  }
   .navbar img {
     width: 600px;
     height: 97px;
@@ -489,7 +445,27 @@ ul li a:hover {
     font-size: 80px;
     margin-right: 130px;
   }
+  .navbarLinks.active {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    position: absolute;
+    top: 0px;
+    background-color: light-dark(#efedea, #223a2c);
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 0;
+    opacity: 1;
+    z-index: 9999;
+  }
+  .navbarLinks img {
+    display: flex;
+    opacity: 1;
+    
+    margin-top: 10px;
+  }
 }
-
-
-

@@ -22,8 +22,7 @@ const Testimonials = () => {
     if (error) {
       console.error("Error fetching products:", error);
     } else {
-      // Only show the first three products
-      setProducts(data.slice(0, 3));
+     setProducts(data.slice(0, 3));
     }
   };
 

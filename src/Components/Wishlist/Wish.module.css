@@ -187,4 +187,24 @@ footer {
   .container {
     width: 1540px;
   }
+  .bgabout{
+    width: 1540px;
+  }
+ .wishlist{
+  width: 1400px;
+  margin-left: 60px;
+ } 
+ .wishlist a{
+  font-size: 20px;
+ }
+}
+@media (max-width:500px){
+ .btn2{
+  width: 190px;
+  font-size: 20px;
+ }
+ .wishlist a{
+  width: 300px;
+  font-size: 25px;
+ }
 }

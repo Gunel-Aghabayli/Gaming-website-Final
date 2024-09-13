@@ -66,18 +66,9 @@ ul li a:hover {
   transform: rotate(360deg);
 }
 
-.iconLight {
-  color: black;
-}
-
-.iconDark {
-  color: white;
-}
 .navbarLinks img {
   display: none;
 }
-/* Add this CSS to Navbar.module.css */
-
 .iconWrapper {
   position: relative;
   display: inline-block;
@@ -95,7 +86,6 @@ ul li a:hover {
   font-weight: bold;
   z-index: 1;
 }
-
 
 @media (max-width: 800px) {
   /* .navbar{
@@ -115,7 +105,6 @@ ul li a:hover {
   }
   .burger i {
     font-size: 60px;
-    
   }
   .navbarLinks.active {
     display: flex;
@@ -132,6 +121,7 @@ ul li a:hover {
     font-weight: 600;
     margin-top: 0;
     opacity: 1;
+    z-index: 9999;
   }
   .navbarLinks img {
     display: flex;
@@ -204,7 +194,7 @@ ul li a:hover {
   font-size: 2.75rem;
   color: #fff;
 }
-.lang{
+.lang {
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -222,17 +212,10 @@ ul li a:hover {
 .toggle:hover {
   transform: rotate(360deg);
 }
-
-.iconLight {
-  color: black;
-}
-
-.iconDark {
-  color: white;
-}
 .navbarLinks img {
   display: none;
 }
+
 
 @media (max-width: 800px) {
   /* .navbar{
@@ -252,13 +235,13 @@ ul li a:hover {
   }
   .burger i {
     font-size: 60px;
-    
+    margin-right: 50px;
   }
-.navbarLinks.active {
+  .navbarLinks.active {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 80px;
+    gap: 50px;
     position: absolute;
     top: 0px;
     background-color: light-dark(#efedea, #223a2c);
@@ -269,52 +252,57 @@ ul li a:hover {
     font-weight: 600;
     margin-top: 0;
     opacity: 1;
+    z-index: 9999;
   }
-.navbarLinks img {
+  .navbarLinks img {
     display: flex;
     opacity: 1;
     margin-right: 120px;
-    margin-top: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
   }
-.navbarLinks li a {
+  .navbarLinks li a {
     color: #000;
   }
   .burger {
     display: block;
   }
 }
-
-
-
-
-
 @media (max-width: 500px) {
-  .navbar{
-
+  .navbar {
   }
   .navbar img {
-    width: 600px;
+    width: 400px;
     height: 97px;
-    margin: 0;
+    margin-left: 50px;
   }
   .burger i {
     font-size: 80px;
-    margin-right: 130px;
+    margin-right: 80px;
+  }
+  .navbarLinks.active {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 76px;
+    position: absolute;
+    top: 0px;
+    background-color: light-dark(#efedea, #223a2c);
+    left: 0;
+    width: 27%;
+    padding: 2rem;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 0;
+    opacity: 1;
+    z-index: 9999;
+  }
+  .navbarLinks img {
+    display: flex;
+    opacity: 1;
+    width: 370px;
+    margin-left: 120px;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
-
-@media (max-width: 500px) {
-  .navbar{
-
-  }
-  .navbar img {
-    width: 600px;
-    height: 97px;
-    margin: 0;
-  }
-  .burger i {
-    font-size: 80px;
-    margin-right: 130px;
-  }
-}
-

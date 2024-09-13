@@ -5,7 +5,7 @@
   margin-top: 10px;
   border-left-color: rgb(90, 90, 90);
   border-right-color: rgb(90, 90, 90);
-  filter: brightness(90%);
+  filter: brightness(70%);
 }
 
 @keyframes rotate {
@@ -26,7 +26,7 @@
   top: 0;
   width: 100%;
   height: 1200px;
-  background: url("https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_bg2.jpg");
+  background: linear-gradient(rgba(13, 6, 45, 0.5), rgba(22, 7, 60, 0.5)), url("https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_bg2.jpg");
   background-size: cover;
   color: white;
   opacity: 0.7;
@@ -209,6 +209,24 @@ button:hover {
   transition: all 0.3s;
 }
 
+.darkMode .explore {
+  background-color: #1e1e1e; /* Dark background */
+  color: #fff; /* Light text */
+}
+.darkMode .explore h3,
+.darkMode .explore p {
+  color: #ddd; /* Adjusting text color for dark mode */
+}
+
+.darkMode .explore a {
+  color: #0a84ff; /* Link color adjustment for dark mode */
+}
+
+/* Image brightness adjustment for dark mode (optional) */
+.darkMode .explore img {
+  filter: brightness(0.9); /* Slightly darken images for dark mode */
+}
+
 @media (max-width: 800px) {
   .explore {
     width: 1498px;
@@ -237,13 +255,12 @@ button:hover {
     margin: 0;
     font-weight: 700;
   }
-  button {
+  .firstButton {
     font-size: 30px;
     width: 400px;
     padding: 30px;
     left: 550px;
   }
- 
 }
 @media (max-width: 500px) {
   .overlay {

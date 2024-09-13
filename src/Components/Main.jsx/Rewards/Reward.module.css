@@ -1,138 +1,135 @@
-.general{
-    background-color: #252525;
-    border-top-left-radius: 70px;
-    border-top-right-radius: 70px;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   margin-top: 50px;
-    height: 800px;
-   position: relative;
+.general {
+  background-color: #252525;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+  height: 800px;
+  position: relative;
 }
-.image{
-    position: absolute;
-    left: 0;
-    z-index: 9999;
+.image {
+  position: absolute;
+  left: 0;
+  z-index: 9999;
 }
-
-
 .award1 h1 {
   font-family: "Anton", sans-serif;
   font-size: 140px;
   font-weight: 400;
   color: white;
-  margin-bottom:0 ;
+  margin-bottom: 0;
 }
-.award1 h2{
-    position: absolute;
-    top: 250px;
-    font-family: "Anton", sans-serif;
-    font-size: 140px;
-    font-weight: 400;
-    margin-top: 0;
-    clear: both;
-    color: rgba(255, 255, 255, 0);
-    overflow-wrap: break-word;
-    stroke: rgb(255, 255, 255);
-    stroke-width: 2px;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-color: rgb(255, 255, 255);
-    -webkit-text-stroke-width: 2px;
+.award1 h2 {
+  position: absolute;
+  top: 250px;
+  font-family: "Anton", sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  margin-top: 0;
+  clear: both;
+  color: rgba(255, 255, 255, 0);
+  overflow-wrap: break-word;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 2px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 2px;
 }
-.wreaths{
-margin-top: 80px;
+.wreaths {
+  margin-top: 80px;
 }
-.wreath1{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 50px;
-    position: relative;
-}
-
-.wreath1 .h1{
-    position: absolute;
-    top: 90px;
-    width: 150px;
-    right:430px;
-    text-align: center;
-    font-size: 15px;
-    color: azure;
-    font-family: "Unbounded", sans-serif;
-}
-.wreath1 .p1{
-    position: absolute;
-    top: 150px;
-    width: 150px;
-    right:430px;
-    text-align: center;
-    font-size: 15px;
-    color: #5A5A5A;
-    font-family: "Unbounded", sans-serif;
-}
-.wreath1 .h2{
-    position: absolute;
-    top: 90px;
-    width: 150px;
-    right:75px;
-    text-align: center;
-    font-size: 15px;
-    color: azure;
-    font-family: "Unbounded", sans-serif;
-}
-.wreath1 .p2{
-    position: absolute;
-    top: 150px;
-    width: 150px;
-    right:75px;
-    text-align: center;
-    font-size: 15px;
-    color: #5A5A5A;
-    font-family: "Unbounded", sans-serif;
-}
-.wreath1 .h3{
-    position: absolute;
-    top: 400px;
-    width: 150px;
-    right:430px;
-    text-align: center;
-    font-size: 15px;
-    color: azure;
-    font-family: "Unbounded", sans-serif;
-}
-.wreath1 .p3{
-    position: absolute;
-    top: 450px;
-    width: 150px;
-    right:430px;
-    text-align: center;
-    font-size: 15px;
-    color: #5A5A5A;
-    font-family: "Unbounded", sans-serif;
-}
-.wreath1 .h4{
-    position: absolute;
-    top: 400px;
-    width: 150px;
-    right:75px;
-    text-align: center;
-    font-size: 15px;
-    color: azure;
-    font-family: "Unbounded", sans-serif;
-}
-.wreath1 .p4{
-    position: absolute;
-    top: 450px;
-    width: 150px;
-    right:75px;
-    text-align: center;
-    font-size: 15px;
-    color: #5A5A5A;
-    font-family: "Unbounded", sans-serif;
+.wreath1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+  position: relative;
 }
 
+.wreath1 .h1 {
+  position: absolute;
+  top: 90px;
+  width: 150px;
+  right: 430px;
+  text-align: center;
+  font-size: 15px;
+  color: azure;
+  font-family: "Unbounded", sans-serif;
+}
+.wreath1 .p1 {
+  position: absolute;
+  top: 150px;
+  width: 150px;
+  right: 430px;
+  text-align: center;
+  font-size: 15px;
+  color: #5a5a5a;
+  font-family: "Unbounded", sans-serif;
+}
+.wreath1 .h2 {
+  position: absolute;
+  top: 90px;
+  width: 150px;
+  right: 75px;
+  text-align: center;
+  font-size: 15px;
+  color: azure;
+  font-family: "Unbounded", sans-serif;
+}
+.wreath1 .p2 {
+  position: absolute;
+  top: 150px;
+  width: 150px;
+  right: 75px;
+  text-align: center;
+  font-size: 15px;
+  color: #5a5a5a;
+  font-family: "Unbounded", sans-serif;
+}
+.wreath1 .h3 {
+  position: absolute;
+  top: 400px;
+  width: 150px;
+  right: 430px;
+  text-align: center;
+  font-size: 15px;
+  color: azure;
+  font-family: "Unbounded", sans-serif;
+}
+.wreath1 .p3 {
+  position: absolute;
+  top: 450px;
+  width: 150px;
+  right: 430px;
+  text-align: center;
+  font-size: 15px;
+  color: #5a5a5a;
+  font-family: "Unbounded", sans-serif;
+}
+.wreath1 .h4 {
+  position: absolute;
+  top: 400px;
+  width: 150px;
+  right: 75px;
+  text-align: center;
+  font-size: 15px;
+  color: azure;
+  font-family: "Unbounded", sans-serif;
+}
+.wreath1 .p4 {
+  position: absolute;
+  top: 450px;
+  width: 150px;
+  right: 75px;
+  text-align: center;
+  font-size: 15px;
+  color: #5a5a5a;
+  font-family: "Unbounded", sans-serif;
+}
 
-@media (max-width:800px){
-    .general{
-        width: 1540px;
-    }
+@media (max-width: 800px) {
+  .general {
+    width: 1540px;
+  }
 }

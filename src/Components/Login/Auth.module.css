@@ -74,3 +74,28 @@
     border-bottom: 2px solid white ;
     
 }
+
+@media(max-width:800px){
+  .back{
+    position: absolute;
+    top: 600px;
+    left: 300px;
+    font-size: 15px;
+  }
+  .submit{
+    width: 300px;
+  }
+ 
+}
+@media(max-width:500px){
+  .signUp{
+    width: 160px;
+    font-size: 20px;
+  }
+ .back{
+  position: absolute;
+  top: 600px;
+  left: 150px;
+  font-size: 15px;
+ }
+}

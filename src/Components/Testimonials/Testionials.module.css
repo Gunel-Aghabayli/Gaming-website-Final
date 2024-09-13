@@ -183,7 +183,7 @@
   border-radius: 40px;
   z-index: 9999;
 }
-.featured span{
+.featured span {
   font-family: "Anton", sans-serif;
   font-size: 50px;
   font-weight: 400;
@@ -251,41 +251,37 @@
   background-color: rgb(45, 244, 161);
   color: white;
 }
-.view{
+.view {
   position: absolute;
   top: 485rem;
   width: 90px;
-  left: 700px;
+  left: 670px;
   font-family: "Anton", sans-serif;
   text-decoration: none;
   color: #000;
- 
+
   border-radius: 10px;
   text-align: center;
   padding: 10px 30px;
   background-color: rgb(45, 244, 161);
 }
-.view:hover{
- 
+.view:hover {
   background-color: #000;
   color: rgb(45, 244, 161);
-  
 }
-
-
 @media (max-width: 800px) {
   .reviews {
     width: 1540px;
   }
-  .box{
+  .box {
     width: 300px;
   }
-  .featured{
+  .featured {
     margin-left: 340px;
   }
 }
-@media (max-width: 500px){
-  .featured{
+@media (max-width: 500px) {
+  .featured {
     margin-left: 500px;
   }
 }
