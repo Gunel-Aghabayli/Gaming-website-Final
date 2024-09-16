@@ -34,7 +34,8 @@
   background-color: #fff;
   top: 640px;
   width: 100%;
-  border-radius: 60px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -99,6 +100,20 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.darkMode .contact {
+  background-color: #403e3e;
+}
+.darkMode .help {
+  color: #fff;
+}
+.darkMode .help h3 {
+  color: #fff;
+}
+.darkMode .faq {
+  background-color: #403e3e;
+  color: #fff;
+}
+
 @media (max-width: 800px) {
   .bgabout {
     width: 1540px;
@@ -106,7 +121,7 @@
   .contact {
     width: 1540px;
   }
-  .marq{
+  .marq {
     width: 1540px;
   }
 }

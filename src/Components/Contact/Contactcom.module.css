@@ -34,7 +34,8 @@
   background-color: #fff;
   top: 640px;
   width: 100%;
-  border-radius: 60px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -145,6 +146,33 @@
   color: #a3a3a3;
   font-size: 15px;
   font-weight: 400;
+}
+.darkMode .contact{
+  background-color: #403e3e;
+}
+.darkMode .office{
+  background-color: #403e3e;
+}
+.darkMode .office h1{
+  color: #fff;
+}
+.darkMode .office h4{
+  color: #fff;
+}
+.darkMode .input input{
+  background-color: #403e3e;
+}
+.darkMode .text textarea{
+  background-color: #403e3e;
+}
+.darkMode .form hr{
+  background-color: #fff;
+}
+.darkMode .image1{
+  background-color: #403e3e;
+}
+.darkMode .image1 h4{
+  color: #fff;
 }
 @media (max-width: 800px) {
   .bgabout {

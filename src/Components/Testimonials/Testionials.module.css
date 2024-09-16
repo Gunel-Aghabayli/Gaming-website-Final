@@ -87,6 +87,9 @@
   gap: 200px;
   padding: 30px;
 }
+.fourth {
+  margin-right: 150px;
+}
 .container {
   background-color: black;
   color: white;
@@ -269,6 +272,90 @@
   background-color: #000;
   color: rgb(45, 244, 161);
 }
+.shopSlice {
+  background-color: red;
+}
+.darkMode .reviews {
+  background-color: #000;
+}
+.darkMode .reviews h1 {
+  color: rgb(45, 244, 161);
+}
+.darkMode .reviews h1 span {
+  -webkit-text-stroke-color: rgb(45, 244, 161);
+}
+.darkMode .allReviews .review {
+  background-color: #232c3e;
+}
+.darkMode .allReviews .review p {
+  color: #fff;
+}
+.darkMode .allReviews .review h6 {
+  color: #90e0ef;
+}
+.darkMode .heading {
+  color: #90e0ef;
+}
+.darkMode .heading hr {
+  background-color: #90e0ef;
+}
+.darkMode .reviews .logos img {
+  background-color: #ecf1fc;
+  padding: 15px;
+  border-radius: 30%;
+}
+.darkMode .box {
+  background-color: #000;
+  border: 1px solid white;
+  margin-top: 30px;
+  height: 450px;
+  width: 300px;
+}
+.darkMode .featured {
+  position: absolute;
+  padding-top: 60px;
+  border-radius: 0%;
+  top: 442rem;
+  color: #fff;
+  background-color: #000;
+}
+.darkMode .featured span {
+  -webkit-text-stroke-color: #fff;
+}
+.darkMode .featured span {
+  -webkit-text-stroke-color: #fbf4f4;
+}
+.darkMode .shopBox{
+  background-color: #000;
+  position: absolute;
+  top: 450rem;
+  margin-left: 0;
+  width: 1519px;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+} 
+.darkMode .box a {
+  color: #fff;
+}
+.darkMode .box a:hover {
+  color: rgb(45, 244, 161);
+}
+.darkMode .star {
+  background-color: #fff;
+  margin-top: 10px;
+}
+.darkMode .btn {
+  background-color: #fff;
+  color: #000;
+}
+.darkMode .btn:hover {
+  background-color: rgb(45, 244, 161);
+}
+/* .darkMode .view{
+  margin-top: 30px;
+  margin-left: 50px;
+} */
 @media (max-width: 800px) {
   .reviews {
     width: 1540px;

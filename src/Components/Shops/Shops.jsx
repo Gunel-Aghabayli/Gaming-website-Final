@@ -9,8 +9,10 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useAppContext } from "../../AppContext";
 import { toast } from "react-toastify";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "../../ThemeContext";
 
 const Shops = () => {
+  const { darkMode } = useTheme();
   const [products, setProducts] = useState([]);
   const { wishlist, cart, addToWishlist, addToCart } = useAppContext();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -128,11 +130,11 @@ const Shops = () => {
   };
 
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div className={style.bgabout}>
         <Navbar />
         <div className={style.content}>
-          <h1>
+          <h1 data-aos="fade-down" data-aos-delay="200">
             OUR <span>SHOP</span>
           </h1>
         </div>
@@ -185,7 +187,6 @@ const Shops = () => {
             </select>
           </div>
         </div>
-
         <div className={style.shopBox}>
           {products.length > 0 ? (
             products.map((product) => (

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import style from "./FAQcom.module.css";
 import Navbar from "../Navbar/Navbar";
 import Marquee from "react-marquee-slider";
-
+import { useTheme } from "../../ThemeContext";
 export const FAQcom = () => {
+  const { darkMode } = useTheme();
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
@@ -48,30 +49,33 @@ export const FAQcom = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div className={style.bgabout}>
         <Navbar />
         <div className={style.content}>
-          <h1>
+          <h1 data-aos="fade-down" data-aos-delay="200">
             FREQUENTLY <span>QUESTIONS</span>
           </h1>
         </div>
       </div>
       <div className={style.contact}>
         <div className={style.help}>
-          <h3>Hi, how can we help you?</h3>
-          <h4>ASK QUESTIONS</h4>
-          <div>
+          <h3 data-aos="fade-down" data-aos-delay="200">Hi, how can we help you?</h3>
+          <h4 data-aos="fade-down" data-aos-delay="200">ASK QUESTIONS</h4>
+          <div data-aos="fade-down" data-aos-delay="200">
             <i class="fa-solid fa-phone"></i> <span>+123 888 000 33</span>
           </div>
-          <div>
+          <div data-aos="fade-down" data-aos-delay="200">
             <i class="fa-solid fa-envelope"></i>{" "}
             <span>contact@example.com</span>
           </div>
         </div>
         <img
-          src="https://img.freepik.com/free-photo/3d-rendering-boy-playing-online_23-2150898537.jpg?t=st=1722377580~exp=1722381180~hmac=ddf16b1dda0b9f17c8d72a60afed8b64a9194eab3c472d5e7a678a956aef9d38&w=740"
+          data-aos="fade-left" data-aos-delay="200"
+          src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h1_img-3.png"
           alt="img"
+          width='500px'
+          height='700px'
         />
       </div>
       <div className={style.marq}>
@@ -82,9 +86,9 @@ export const FAQcom = () => {
           <p>Write us and we’ll do our best to figure out how to help you.</p>
         </Marquee>
       </div>
-
+     <div className={style.ques} >
       <div className={style.faqPhoto}>
-        <div className={style.faq}>
+        <div className={style.faq} data-aos="fade-right" data-aos-delay="200">
           {faqs.map((faq, index) => (
             <div key={index} className={style.section}>
               <h3 onClick={() => toggleFAQ(index)}>
@@ -95,10 +99,12 @@ export const FAQcom = () => {
           ))}
         </div>
         <img
+          data-aos="fade-left" data-aos-delay="200"
           className={style.imag}
           src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h3_img-11.png"
           alt="img"
         />
+      </div>
       </div>
     </div>
   );

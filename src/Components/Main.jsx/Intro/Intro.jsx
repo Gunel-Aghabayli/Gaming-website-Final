@@ -24,12 +24,12 @@ const Intro = () => {
         <div className={style.overlay}>
           <Navbar />
         </div>
-        <div className={style.content}>
-          <h2>LET'S</h2>
-          <h1>PLAY GAMES</h1>
-          <h3>We focus on creating beautiful games</h3>
+        <div  className={style.content}>
+          <h2 data-aos="fade-down" data-aos-delay="200">LET'S</h2>
+          <h1 data-aos="fade-down" data-aos-delay="200">PLAY GAMES</h1>
+          <h3 data-aos="fade-up" data-aos-delay="200">We focus on creating beautiful games</h3>
         </div>
-        <button className={style.firstButton}>
+        <button  data-aos="fade-up" data-aos-delay="200" className={style.firstButton}>
           <Link>OUR PROJECTS</Link>
         </button>
       </div>
@@ -42,23 +42,24 @@ const Intro = () => {
               alt="donen"
             />
           </div>
-          <h3>
+          <h3 data-aos="fade-down" data-aos-delay="200">
             Qamico Studio is a team of over 100 highly experienced professionals
             from all around the world who share the passion and drive for
             creating video games.
           </h3>
-          <p>
+          <p data-aos="fade-down" data-aos-delay="200">
             The studios are integrated into the Group by service line and use
             the operating systems and tools deployed by those services lines to
             ensure people and projects can operate across studios and across
             geographies.
           </p>
 
-          <Link to="">
+          <Link data-aos="fade-down" data-aos-delay="200" to="/about">
             MORE ABOUT US <i class="fa-solid fa-arrow-right-long"></i>
           </Link>
           <div>
             <img
+            data-aos="fade-down" data-aos-delay="200"
               className={style.img3}
               src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_img3.jpg"
               width="420"
@@ -69,10 +70,9 @@ const Intro = () => {
         </div>
         <div className={style.partTwo}>
           <div className={style.headline}>
-            <p>EXPLORE</p>
-            <h1>STUDIO</h1>
+            <p data-aos="fade-down" data-aos-delay="200">EXPLORE</p>
+            <h1 data-aos="fade-down" data-aos-delay="200">STUDIO</h1>
           </div>
-
           <img
             className={style.img4}
             src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_img2.jpg"
@@ -80,11 +80,12 @@ const Intro = () => {
             height="540"
           />
           <img
+          data-aos="zoom-in" data-aos-delay="200"
             className={style.img5}
             src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_img1.png"
           />
-          <h3>COME WORK WITH US!</h3>
-          <div className={style.photos}>
+          <h3 data-aos="fade-up" data-aos-delay="200">COME WORK WITH US!</h3>
+          <div className={style.photos} data-aos="fade-up" data-aos-delay="200">
             <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_ava1.png" />
             <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_ava2.png" />
             <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_ava3.png" />
@@ -93,8 +94,7 @@ const Intro = () => {
           </div>
         </div>
       </div>
-      
-    </div>
+      </div>
   );
 };
 

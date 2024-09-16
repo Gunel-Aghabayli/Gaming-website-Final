@@ -15,7 +15,7 @@ const Check = () => {
   });
 
   useEffect(() => {
-    // Parse the single product details from the query parameters
+  
     const param = searchParams.get('product');
     if (param) {
       const parsedProduct = JSON.parse(decodeURIComponent(param));

@@ -202,16 +202,24 @@ footer {
   border-radius: 4px;
   cursor: pointer;
 }
-
 .filters {
   display: flex;
   gap: 10px;
 }
-
 .filters select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+.darkMode .butSearch{
+  background-color: #fff;
+  color: #000;
+}
+.darkMode .box{
+  border: #fff 1px solid;
+}
+.darkMode .box a{
+  color: #fff;
 }
 
 @media (max-width: 800px) {
@@ -246,7 +254,7 @@ footer {
     width: 70px;
     height: 70px;
   }
-  .box{
+  .box {
     width: 300px;
   }
 }

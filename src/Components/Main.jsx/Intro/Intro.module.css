@@ -215,16 +215,17 @@ button:hover {
 }
 .darkMode .explore h3,
 .darkMode .explore p {
-  color: #ddd; /* Adjusting text color for dark mode */
+  color: #ddd; 
 }
 
 .darkMode .explore a {
-  color: #0a84ff; /* Link color adjustment for dark mode */
+  color: #0a84ff; 
 }
-
-/* Image brightness adjustment for dark mode (optional) */
 .darkMode .explore img {
-  filter: brightness(0.9); /* Slightly darken images for dark mode */
+  filter: brightness(0.9); 
+}
+.darkMode .explore h1{
+  -webkit-text-stroke-color: rgb(252, 249, 249);
 }
 
 @media (max-width: 800px) {

@@ -3,27 +3,26 @@ import style from "./AboutCom.module.css";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useState } from "react";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 import { useTranslation } from "react-i18next";
-import { Avatar, Dropdown, Menu } from 'antd';
+import { Avatar, Dropdown, Menu } from "antd";
 import { useAuth } from "../../AuthContext";
-import { useAppContext } from "../../AppContext"; 
-
+import { useAppContext } from "../../AppContext";
 
 const AboutCom = () => {
   const { darkMode, toggleDarkMode } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const { user, isLoggedIn, logOut } = useAuth();
-  const { cart, wishlist } = useAppContext(); 
+  const { cart, wishlist } = useAppContext();
   const { i18n } = useTranslation();
-  const [language, setLanguage] = useState('ENG');
+  const [language, setLanguage] = useState("ENG");
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
   const changeLanguage = (lang, abbreviation) => {
-    i18n.changeLanguage(lang); 
-    setLanguage(abbreviation); 
+    i18n.changeLanguage(lang);
+    setLanguage(abbreviation);
   };
   const menu = (
     <Menu>
@@ -34,92 +33,95 @@ const AboutCom = () => {
   );
   const languageMenu = (
     <Menu className={style.lang}>
-      <Menu.Item key="en" onClick={() => changeLanguage('en', 'ENG')}>
+      <Menu.Item key="en" onClick={() => changeLanguage("en", "ENG")}>
         English
       </Menu.Item>
-      <Menu.Item key="aze" onClick={() => changeLanguage('aze', 'AZE')}>
+      <Menu.Item key="aze" onClick={() => changeLanguage("aze", "AZE")}>
         Azerbaijani
       </Menu.Item>
     </Menu>
   );
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div className={style.bgabout}>
-      <div>
-      <div className={`${style.navbar} ${darkMode ? style.dark : ""}`}>
-        <a href="">
-          <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/logo-white.svg" />
-        </a>
-        <ul className={`${style.navbarLinks} ${isOpen ? style.active : ""}`}>
-          <a href="">
-            <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/logo.svg" />
-          </a>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/shop">Shop</NavLink>
-          </li>
-          <li>
-            <NavLink to="/faq">FAQ</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
-          <li onClick={toggleDarkMode} className={style.toggle}>
-            {darkMode ? (
-              <i className={`fa-solid fa-sun ${style.iconDark}`}></i>
-            ) : (
-              <i className={`fa-solid fa-moon ${style.iconLight}`}></i>
-            )}
-          </li>
-        </ul>
-        <div className={style.icons}>
-          {isLoggedIn ? (
-            <Dropdown overlay={menu} trigger={['click']}>
-              <Avatar
-                style={{ backgroundColor: '#00a2ae', cursor: 'pointer' }} 
-                size="small"
-              >
-                {user.email.charAt(0).toUpperCase()} 
-              </Avatar>
-            </Dropdown>
-          ) : (
-            <NavLink to="/login">
-              <i className="fa-regular fa-user"></i>
-            </NavLink>
-          )}
-          <NavLink to="/wishlist" className={style.iconWrapper}>
-            <i className="fa-regular fa-heart"></i>
-            {wishlist.length > 0 && (
-              <span className={style.badge}>{wishlist.length}</span>
-            )}
-          </NavLink>
-          <NavLink to="/cart" className={style.iconWrapper}>
-            <i className="fa-solid fa-cart-shopping"></i>
-            {cart.length > 0 && (
-              <span className={style.badge}>{cart.length}</span>
-            )}
-          </NavLink>
-          <Dropdown overlay={languageMenu} trigger={['click']}>
-         
-          <span className={style.languageToggle} style={{ cursor: 'pointer' }}>
-            {language}
-          </span>
-        </Dropdown>
+        <div>
+          <div className={`${style.navbar} ${darkMode ? style.dark : ""}`}>
+            <a href="">
+              <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/logo-white.svg" />
+            </a>
+            <ul
+              className={`${style.navbarLinks} ${isOpen ? style.active : ""}`}
+            >
+              <a href="">
+                <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/logo.svg" />
+              </a>
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/about">About</NavLink>
+              </li>
+              <li>
+                <NavLink to="/shop">Shop</NavLink>
+              </li>
+              <li>
+                <NavLink to="/faq">FAQ</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact">Contact</NavLink>
+              </li>
+              <li onClick={toggleDarkMode} className={style.toggle}>
+                {darkMode ? (
+                  <i className={`fa-solid fa-sun ${style.iconDark}`}></i>
+                ) : (
+                  <i className={`fa-solid fa-moon ${style.iconLight}`}></i>
+                )}
+              </li>
+            </ul>
+            <div className={style.icons}>
+              {isLoggedIn ? (
+                <Dropdown overlay={menu} trigger={["click"]}>
+                  <Avatar
+                    style={{ backgroundColor: "#00a2ae", cursor: "pointer" }}
+                    size="small"
+                  >
+                    {user.email.charAt(0).toUpperCase()}
+                  </Avatar>
+                </Dropdown>
+              ) : (
+                <NavLink to="/login">
+                  <i className="fa-regular fa-user"></i>
+                </NavLink>
+              )}
+              <NavLink to="/wishlist" className={style.iconWrapper}>
+                <i className="fa-regular fa-heart"></i>
+                {wishlist.length > 0 && (
+                  <span className={style.badge}>{wishlist.length}</span>
+                )}
+              </NavLink>
+              <NavLink to="/cart" className={style.iconWrapper}>
+                <i className="fa-solid fa-cart-shopping"></i>
+                {cart.length > 0 && (
+                  <span className={style.badge}>{cart.length}</span>
+                )}
+              </NavLink>
+              <Dropdown overlay={languageMenu} trigger={["click"]}>
+                <span
+                  className={style.languageToggle}
+                  style={{ cursor: "pointer" }}
+                >
+                  {language}
+                </span>
+              </Dropdown>
+            </div>
+          </div>
+          <div className={style.burger} onClick={toggleMenu}>
+            <i className={isOpen ? "fas fa-times" : "fas fa-bars"}></i>
+          </div>
         </div>
-      </div>
-      <div className={style.burger} onClick={toggleMenu}>
-        <i className={isOpen ? "fas fa-times" : "fas fa-bars"}></i>
-      </div>
-    </div>
-  );
-
+        );
         <div className={style.content}>
-          <h1>
+          <h1 data-aos="fade-down" data-aos-delay="200">
             THE <span>STORIES</span>
           </h1>
         </div>
@@ -128,6 +130,7 @@ const AboutCom = () => {
       <div className={style.team}>
         <div>
           <img
+            data-aos="fade-down" data-aos-delay="200"
             className={style.teamphoto}
             src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/about-pic.jpg"
           />
@@ -138,11 +141,11 @@ const AboutCom = () => {
             alt="donen"
             src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h1_deco.png"
           />
-          <h2 className={style.studio}>
+          <h2 className={style.studio} data-aos="fade-down" data-aos-delay="50">
             WE ARE <span className={style.span}> AWARD-WINNING</span>{" "}
             INDEPENDENT GAME STUDIO, BASED IN THE UK.
           </h2>
-          <p className={style.ptag}>
+          <p className={style.ptag} data-aos="fade-up" data-aos-delay="200">
             The studios are integrated into the Group by service line and use
             the operating systems and tools deployed by those services lines to
             ensure people and projects can operate across studios and across
@@ -153,7 +156,7 @@ const AboutCom = () => {
 
       <div className={style.value}>
         <hr className={style.valuehr} />
-        <h1 className={style.header}>OUR VALUES</h1>
+        <h1 className={style.header} data-aos="fade-down" data-aos-delay="200">OUR VALUES</h1>
         <div className={style.leaders}>
           <div>
             <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/ab-shape1.png" />
@@ -190,14 +193,14 @@ const AboutCom = () => {
         </div>
       </div>
       <div className={style.diversty}>
-        <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/about-pic2.png" />
+        <img data-aos="fade-down" data-aos-delay="200" src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/about-pic2.png" />
         <div className={style.inclusion}>
-          <h1>Diversity & Inclusion</h1>
-          <h2>
+          <h1 data-aos="fade-down" data-aos-delay="200">Diversity & Inclusion</h1>
+          <h2 data-aos="fade-up" data-aos-delay="50">
             We’re focused on making a great home for people who love making
             games and setting a high bar for diversity and inclusion.
           </h2>
-          <h4>
+          <h4 data-aos="fade-up" data-aos-delay="200">
             We believe that anyone with passion, vision, and perseverance can
             make a positive impact. As part of that ethos, we also believe that
             there are ways where we, as a company, can provide long-term value
@@ -208,7 +211,7 @@ const AboutCom = () => {
       </div>
       <Footer />
     </div>
-);
+  );
 };
 
 export default AboutCom;

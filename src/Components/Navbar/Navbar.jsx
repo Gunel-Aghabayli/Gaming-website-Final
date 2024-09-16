@@ -1,26 +1,27 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 import { useTranslation } from "react-i18next";
-import { Avatar, Dropdown, Menu } from 'antd';
+import { Avatar, Dropdown, Menu } from "antd";
 import { useAuth } from "../../AuthContext";
-import { useAppContext } from "../../AppContext"; 
+import { useAppContext } from "../../AppContext";
 import style from "./Navbar.module.css";
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const { user, isLoggedIn, logOut } = useAuth();
-  const { cart, wishlist } = useAppContext(); 
+  const { user, isLoggedIn, logOut, role } = useAuth(); 
+  const { cart, wishlist } = useAppContext();
   const { i18n } = useTranslation();
-  const [language, setLanguage] = useState('ENG');
+  const [language, setLanguage] = useState("ENG");
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
   const changeLanguage = (lang, abbreviation) => {
-    i18n.changeLanguage(lang); 
-    setLanguage(abbreviation); 
+    i18n.changeLanguage(lang);
+    setLanguage(abbreviation);
   };
+
   const menu = (
     <Menu>
       <Menu.Item key="1" onClick={logOut}>
@@ -28,12 +29,14 @@ const Navbar = () => {
       </Menu.Item>
     </Menu>
   );
+  console.log("User Role:", role);
+
   const languageMenu = (
     <Menu className={style.lang}>
-      <Menu.Item key="en" onClick={() => changeLanguage('en', 'ENG')}>
+      <Menu.Item key="en" onClick={() => changeLanguage("en", "ENG")}>
         English
       </Menu.Item>
-      <Menu.Item key="aze" onClick={() => changeLanguage('aze', 'AZE')}>
+      <Menu.Item key="aze" onClick={() => changeLanguage("aze", "AZE")}>
         Azerbaijani
       </Menu.Item>
     </Menu>
@@ -73,12 +76,12 @@ const Navbar = () => {
         </ul>
         <div className={style.icons}>
           {isLoggedIn ? (
-            <Dropdown overlay={menu} trigger={['click']}>
+            <Dropdown overlay={menu} trigger={["click"]}>
               <Avatar
-                style={{ backgroundColor: '#00a2ae', cursor: 'pointer' }} 
+                style={{ backgroundColor: "#00a2ae", cursor: "pointer" }}
                 size="small"
               >
-                {user.email.charAt(0).toUpperCase()} 
+                {user.email.charAt(0).toUpperCase()}
               </Avatar>
             </Dropdown>
           ) : (
@@ -98,12 +101,14 @@ const Navbar = () => {
               <span className={style.badge}>{cart.length}</span>
             )}
           </NavLink>
-          <Dropdown overlay={languageMenu} trigger={['click']}>
-         
-          <span className={style.languageToggle} style={{ cursor: 'pointer' }}>
-            {language}
-          </span>
-        </Dropdown>
+          <Dropdown overlay={languageMenu} trigger={["click"]}>
+            <span
+              className={style.languageToggle}
+              style={{ cursor: "pointer" }}
+            >
+              {language}
+            </span>
+          </Dropdown>
         </div>
       </div>
       <div className={style.burger} onClick={toggleMenu}>
@@ -114,6 +119,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-

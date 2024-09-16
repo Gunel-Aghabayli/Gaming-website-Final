@@ -2,8 +2,9 @@ import Navbar from "../Navbar/Navbar";
 import React from "react";
 import style from "./Contactcom.module.css";
 import { useState } from "react";
-
+import { useTheme } from "../../ThemeContext";
 const ContactCom = () => {
+  const { darkMode } = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -29,7 +30,7 @@ const ContactCom = () => {
     });
   };
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div className={style.bgabout}>
         <Navbar />
         <div className={style.content}>

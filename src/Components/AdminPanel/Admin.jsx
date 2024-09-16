@@ -14,7 +14,7 @@ const AdminDashboard = () => {
     info: "",
     image: "",
   });
-  const [showAddForm, setShowAddForm] = useState(false); // State to toggle form visibility
+  const [showAddForm, setShowAddForm] = useState(false);
 
   useEffect(() => {
     const fetchTeamMembers = async () => {
@@ -39,7 +39,6 @@ const AdminDashboard = () => {
   const handleEditClick = (member) => {
     setEditingMember(member);
   };
-
   const handleSave = async () => {
     const { error } = await supabase
       .from("team")
@@ -64,7 +63,6 @@ const AdminDashboard = () => {
       toast.success("Team member updated successfully.");
     }
   };
-
   const handleAddMember = async () => {
     if (
       !newMember.name ||
@@ -75,34 +73,39 @@ const AdminDashboard = () => {
       toast.error("Please fill in all fields.");
       return;
     }
-
-    const { data, error } = await supabase.from("team").insert([newMember]);
+   const { data, error } = await supabase
+      .from("team")
+      .insert([newMember])
+      .select();
 
     if (error) {
       console.error("Error adding new team member:", error);
       toast.error("Failed to add team member.");
-    } else {
+    } else if (data && data.length > 0) {
       setTeamMembers([...teamMembers, data[0]]);
       setNewMember({ name: "", head: "", info: "", image: "" });
       setShowAddForm(false);
       toast.success("Team member added successfully.");
+    } else {
+      toast.error("Failed to retrieve the new member after insertion.");
     }
   };
-
   return (
     <div>
-    <div className={style.add}>
-      <h1 className={style.adminHead}>Admin Dashboard</h1>
-      <div>
-      <button className={style.toggleButton}><Link to="/">Back to Home</Link></button>
-      <button
-        className={style.toggleButton}
-        onClick={() => setShowAddForm(!showAddForm)}
-      >
-        {showAddForm ? "Hide Add Form" : "Add New Team Member"}
-      </button>
+      <div className={style.add}>
+        <h1 className={style.adminHead}>Admin Dashboard</h1>
+        <div>
+          <button className={style.toggleButton}>
+            <Link to="/">Back to Home</Link>
+          </button>
+          <button
+            className={style.toggleButton}
+            onClick={() => setShowAddForm(!showAddForm)}
+          >
+            {showAddForm ? "Hide Add Form" : "Add New Team Member"}
+          </button>
+        </div>
       </div>
-</div>
       {showAddForm && (
         <div className={style.inputs}>
           <h2>Add New Team Member</h2>

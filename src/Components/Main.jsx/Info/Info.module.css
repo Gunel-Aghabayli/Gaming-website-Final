@@ -81,11 +81,11 @@
   background-image: url(/src/shared/images/h2_bg1.jpg);
   background-size: cover;
   width: 100%;
-  height: 900px;
- border-top-right-radius: 90px;
- border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+  border-top-left-radius: 90px;
   position: relative;
   height: 1100px;
+ 
 }
 .countSection {
   display: grid;
@@ -183,10 +183,24 @@
   color: rgb(45, 244, 161);
   font-weight: 400;
 }
-
-
-
-
+.darkMode .first{
+  background-color: #9d8189;
+}
+.darkMode .first p{
+  color: #fff;
+}
+.darkMode .second{
+  background-color: #0077b6;
+}
+.darkMode .second p{
+  color: #fff;
+}
+.darkMode .third{
+  background-color: #bb3e03;
+}
+.darkMode .third p{
+  color: #fff;
+}
 
 
 

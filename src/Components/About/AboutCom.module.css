@@ -32,7 +32,8 @@
   display: flex;
   justify-content: space-between;
   padding: 90px 80px;
-  border-radius: 70px;
+  border-top-right-radius: 70px;
+  border-top-left-radius: 70px;
   position: absolute;
   background-color: white;
   top: 630px;
@@ -235,13 +236,6 @@ ul li a:hover {
   transform: rotate(360deg);
 }
 
-.iconLight {
-  color: black;
-}
-
-.iconDark {
-  color: white;
-}
 .navbarLinks img {
   display: none;
 }
@@ -317,10 +311,10 @@ ul li a {
   text-decoration: none;
   color: white;
 }
+
 .icons {
   display: flex;
   gap: 20px;
-
   color: white;
 }
 .icons i {
@@ -371,7 +365,7 @@ ul li a:hover {
 }
 
 .iconLight {
-  color: black;
+  color: white;
 }
 
 .iconDark {
@@ -379,6 +373,39 @@ ul li a:hover {
 }
 .navbarLinks img {
   display: none;
+}
+.darkMode .team {
+  background-color: #403e3e;
+}
+.darkMode .team .ptag {
+  color: #fff;
+}
+.darkMode .value {
+  background-color: #403e3e;
+  padding-top: 50px;
+  position: absolute;
+  top: 83rem;
+  padding-bottom: 52px;
+}
+.darkMode .value .header {
+  color: rgb(45, 244, 161);
+}
+.darkMode .leaders h2 {
+  color: #fff;
+  font-weight: 300;
+}
+.darkMode .leaders p {
+  color: #aaa9a8;
+}
+.darkMode .diversty {
+  background-color: #403e3e;
+  padding-top: 24px;
+}
+.darkMode .inclusion h2{
+  color: #aaa9a8;
+}
+.darkMode .inclusion h4{
+  color: #8f8d89;
 }
 
 @media (max-width: 800px) {
@@ -465,7 +492,7 @@ ul li a:hover {
   .navbarLinks img {
     display: flex;
     opacity: 1;
-    
+
     margin-top: 10px;
   }
 }

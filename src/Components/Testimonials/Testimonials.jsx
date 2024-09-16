@@ -8,9 +8,10 @@ import { useAppContext } from "../../AppContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
+import { useTheme } from "../../ThemeContext";
 const Testimonials = () => {
+  const { darkMode } = useTheme();
   const [products, setProducts] = useState([]);
-
   const { wishlist, cart, addToWishlist, addToCart } = useAppContext();
   useEffect(() => {
     fetchProducts();
@@ -72,14 +73,14 @@ const Testimonials = () => {
     );
   };
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div className={style.reviews}>
-        <h1>
+        <h1 data-aos="fade-down" data-aos-delay="200">
           GAME <span>REVIEWS</span>
         </h1>
         <div className={style.allReviews}>
           <div className={style.review}>
-            <h2>MASTERPIECE</h2>
+            <h2 data-aos="fade-up" data-aos-delay="200">MASTERPIECE</h2>
             <hr />
             <p>
               “Animated space-exploration drama combines gorgeous animation with
@@ -88,7 +89,7 @@ const Testimonials = () => {
             <h6>ROBERT FOX, GAMER</h6>
           </div>
           <div className={style.review}>
-            <h2>AMAZING</h2>
+            <h2 data-aos="fade-up" data-aos-delay="200">AMAZING</h2>
             <hr />
             <p>
               “Excellent job, your games is phenomenal. This is the way people
@@ -97,7 +98,7 @@ const Testimonials = () => {
             <h6>JOHN DOE, PC GAMER</h6>
           </div>
           <div className={style.review}>
-            <h2>GREAT</h2>
+            <h2 data-aos="fade-up" data-aos-delay="200">GREAT</h2>
             <hr />
             <p>
               “Mesmerizing, serious gameplay. An exceptional work of the
@@ -108,18 +109,20 @@ const Testimonials = () => {
         </div>
         <div className={style.heading}>
           <hr />
-          <h3>RECENT CLIENTS</h3>
+          <h3 data-aos="fade-down" data-aos-delay="100">RECENT CLIENTS</h3>
           <hr />
         </div>
         <Marquee>
           <div className={style.logos}>
             <img
               src="https://cdn-icons-png.flaticon.com/256/5969/5969151.png"
-              width="120"
+              width="100"
+              height="100"
             />
             <img
               src="https://cdn-icons-png.flaticon.com/256/13/13973.png"
-              width="120"
+              width="100"
+              height="100"
             />
             <img
               src="https://cdn-icons-png.flaticon.com/256/1/1321.png"
@@ -128,27 +131,31 @@ const Testimonials = () => {
             />
             <img
               src="https://cdn-icons-png.flaticon.com/256/588/588330.png"
-              width="120"
+              width="100"
+              height="100"
             />
             <img
+            className={style.fourth}
               src="https://cdn-icons-png.flaticon.com/256/588/588338.png"
               width="100"
+              height="100"
             />
           </div>
         </Marquee>
       </div>
-      <h2 className={style.featured}>
+     <div className={style.shopSlice}>
+      <h2 data-aos="fade-down" data-aos-delay="200" className={style.featured}>
         FEATURED <span>PRODUCTS</span>
       </h2>
       <div className={style.shopBox}>
         {products.length > 0 ? (
           products.map((product) => (
-            <div className={style.box} key={product.id}>
+            <div data-aos="fade-down" data-aos-delay="200" className={style.box} key={product.id}>
               <img src={product.image} alt={product.title} />
               <Link to={`/shops/products?product=${product.id}`}>
                 {product.title}
               </Link>
-              <div>{renderStars(product.isNew)}</div>
+              <div className={style.star}>{renderStars(product.isNew)}</div>
               <h3>${product.price}</h3>
               <div className={style.btnS}>
                 <button
@@ -176,6 +183,8 @@ const Testimonials = () => {
       </div>
       <Link className={style.view} to='/shop'>GO TO SHOP</Link>
     </div>
+      </div>
+
   );
 };
 

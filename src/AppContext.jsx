@@ -1,9 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
-
-// Create the context
 const AppContext = createContext();
 
-// Create the provider component
 export const AppProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
   const [cart, setCart] = useState([]);

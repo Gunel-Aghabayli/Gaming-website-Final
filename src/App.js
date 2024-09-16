@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
@@ -20,9 +20,12 @@ import TeamDetail from "./Pages/TeamDetail";
 import AdminPage from "./Pages/AdminPage";
 import Checkout from "./Pages/Checkout";
 import { useTranslation } from 'react-i18next';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const App = () => {
- 
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true }); 
+  }, []);
 return (
     <ThemeProvider>
       <BrowserRouter>

@@ -5,10 +5,10 @@ const Reward = () => {
     <div className={style.general}>
       <div className={style.awards}>
         <div className={style.award1}>
-          <h1>OUR</h1>
-          <h2>AWARDS</h2>
+          <h1 data-aos="fade-down" data-aos-delay="200">OUR</h1>
+          <h2 data-aos="fade-down" data-aos-delay="200">AWARDS</h2>
         </div>
-        <img className={style.image} src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_img8.png" />
+        <img data-aos="fade-up" data-aos-delay="200"className={style.image} src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_img8.png" />
       </div>
       <div className={style.wreaths}>
         <div className={style.wreath1}>
