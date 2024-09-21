@@ -50,7 +50,7 @@ export const AppProvider = ({ children }) => {
         cart,
         addToCart,
         removeFromCart,
-        updateCartItem, // Make sure this is included
+        updateCartItem,
       }}
     >
       {children}
@@ -58,5 +58,4 @@ export const AppProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the context
 export const useAppContext = () => useContext(AppContext);

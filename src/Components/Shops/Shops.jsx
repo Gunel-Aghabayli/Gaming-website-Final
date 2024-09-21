@@ -20,10 +20,10 @@ const Shops = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedPrice, setSelectedPrice] = useState("all");
   const [selectedRating, setSelectedRating] = useState("all");
-
+  const [selectedSort, setSelectedSort] = useState("none");
   useEffect(() => {
     fetchProducts();
-  }, [searchParams, searchQuery]);
+  }, [searchParams, searchQuery, selectedSort]);
 
   const fetchProducts = async () => {
     let query = supabase.from("products").select("*");
@@ -53,7 +53,13 @@ const Shops = () => {
     if (error) {
       console.error("Error fetching products:", error);
     } else {
-      setProducts(data);
+      let sortedData = data;
+      if (selectedSort === "A-Z") {
+        sortedData = data.sort((a, b) => a.title.localeCompare(b.title));
+      } else if (selectedSort === "Z-A") {
+        sortedData = data.sort((a, b) => b.title.localeCompare(a.title));
+      }
+      setProducts(sortedData);
     }
   };
 
@@ -82,6 +88,10 @@ const Shops = () => {
       return params;
     });
   };
+  const handleSortChange = (e) => {
+    setSelectedSort(e.target.value);
+  };
+
 
   const isProductInWishlist = (product) => {
     return wishlist.some((item) => item.id === product.id);
@@ -128,8 +138,7 @@ const Shops = () => {
       </div>
     );
   };
-
-  return (
+ return (
     <div className={darkMode ? style.darkMode : style.lightMode}>
       <div className={style.bgabout}>
         <Navbar />
@@ -176,7 +185,14 @@ const Shops = () => {
               <option value="100">Under $100</option>
               <option value="300">Under $300</option>
             </select>
-
+            <select
+            onChange={handleSortChange}
+            value={selectedSort}
+          >
+            <option value="none">Sort by</option>
+            <option value="A-Z">A to Z</option>
+            <option value="Z-A">Z to A</option>
+          </select>
             <select
               onChange={(e) => handleFilterChange("rating", e.target.value)}
               value={selectedRating}

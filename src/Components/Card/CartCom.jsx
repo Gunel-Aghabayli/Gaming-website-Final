@@ -5,8 +5,10 @@ import style from "./CartCom.module.css";
 import { toast } from "react-toastify";
 import { supabase } from "../../supabase.js";
 import Navbar from "../Navbar/Navbar.jsx";
+import { useTheme } from "../../ThemeContext";
 
 const CartCom = () => {
+  const { darkMode } = useTheme();
   const { cart, removeFromCart, updateCartItem } = useAppContext();
   const navigate = useNavigate();
   const [totalPrice, setTotalPrice] = useState(0);
@@ -33,21 +35,34 @@ const CartCom = () => {
     }
   };
 
-  const handlePurchase = async () => {
+  const handlePurchaseAll = async () => {
     const { data: { user } } = await supabase.auth.getUser();
     if (user) {
-      // Prepare query parameters
-      const productParams = cart.map(product => `product=${encodeURIComponent(JSON.stringify(product))}`).join('&');
-      navigate(`/checkout?${productParams}`);
-      cart.forEach((product) => removeFromCart(product));
+      const allProductsParams = cart.map(product => 
+        `product=${encodeURIComponent(JSON.stringify(product))}`
+      ).join('&');
+      navigate(`/checkout?${allProductsParams}`);
     } else {
       alert("Please login to make a purchase.");
       navigate("/login");
     }
   };
 
+  const handleSinglePurchase = async (product) => {
+    const { data: { user } } = await supabase.auth.getUser();  
+    if (user) {
+      const productParams = `product=${encodeURIComponent(JSON.stringify(product))}`;
+      navigate(`/checkout?${productParams}`);
+    } else {
+      alert("Please login to make a purchase.");
+      navigate("/login");
+    }
+  };
+  
+  
+
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div>
         <div className={style.bgabout}>
           <Navbar />
@@ -83,9 +98,9 @@ const CartCom = () => {
                     >
                       Remove
                     </button>
-                    <button className={style.btn3} onClick={handlePurchase}>
-                      Purchase
-                    </button>
+                    <button className={style.btn3} onClick={() => handleSinglePurchase(product)}>
+                    Purchase
+                  </button>
                     <button
                       className={style.btn3}
                       onClick={() => navigate("/shop")}
@@ -111,6 +126,9 @@ const CartCom = () => {
         </div>
         <div className={style.totalPrice}>
           <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
+          <button className={style.btn4} onClick={handlePurchaseAll}>
+          Purchase All
+        </button>
         </div>
       </div>
       <div className={style.container}>

@@ -44,6 +44,7 @@
 .name {
   font-family: "Anton", sans-serif;
   font-size: 54px;
+  width: 500px;
 }
 .items {
   display: flex;
@@ -98,38 +99,37 @@
   flex-direction: column;
   gap: 20px;
 }
-.tags a{
-    color: #5a5a5a;
+.tags a {
+  color: #5a5a5a;
 }
-.alink{
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
+.alink {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 }
-.quantity{
+.quantity {
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.quantity button{
+.quantity button {
   font-family: "Unbounded", sans-serif;
   font-size: 20px;
   width: 60px;
-  background-color: #F1ECE7;
+  background-color: #f1ece7;
   border: none;
   border-radius: 4px;
   padding: 10px;
 }
-.number{
+.number {
   font-family: "Unbounded", sans-serif;
   font-size: 20px;
-
 }
-.btnS{
+.btnS {
   display: flex;
   gap: 20px;
 }
-.btn{
+.btn {
   padding: 15px 30px;
   background-color: #000;
   color: #fff;
@@ -137,10 +137,10 @@
   border: none;
   border-radius: 10px;
 }
-.btn:hover{
+.btn:hover {
   background-color: rgb(45, 244, 161);
   color: #fff;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .container,
 footer {
@@ -231,6 +231,20 @@ footer {
 }
 .footerBottom span {
   color: #fff;
+}
+.darkMode {
+  background-color: #403e3e;
+}
+.darkMode .proInfo{
+  color: rgb(45, 244, 161);
+}
+.darkMode .proInfo .describe{
+  color: #fff;
+}
+
+.darkMode .bgabout{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("https://demo2.wpopal.com/gamico/wp-content/uploads/2024/04/shop_br.jpg");
 }
 
 @media (max-width: 800px) {

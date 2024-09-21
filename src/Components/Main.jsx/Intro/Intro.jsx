@@ -30,7 +30,7 @@ const Intro = () => {
           <h3 data-aos="fade-up" data-aos-delay="200">We focus on creating beautiful games</h3>
         </div>
         <button  data-aos="fade-up" data-aos-delay="200" className={style.firstButton}>
-          <Link>OUR PROJECTS</Link>
+          <Link to='/about'>OUR PROJECTS</Link>
         </button>
       </div>
       <div className={style.explore}>

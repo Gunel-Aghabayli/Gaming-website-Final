@@ -20,7 +20,7 @@ const AdminDashboard = () => {
     const fetchTeamMembers = async () => {
       const { data, error } = await supabase.from("team").select("*");
       if (error) console.error("Error fetching team members:", error);
-      else setTeamMembers(data);
+      else setTeamMembers(data || []); 
     };
     fetchTeamMembers();
   }, []);
@@ -39,30 +39,34 @@ const AdminDashboard = () => {
   const handleEditClick = (member) => {
     setEditingMember(member);
   };
-  const handleSave = async () => {
-    const { error } = await supabase
-      .from("team")
-      .update({
-        name: editingMember.name,
-        head: editingMember.head,
-        info: editingMember.info,
-        image: editingMember.image,
-      })
-      .eq("id", editingMember.id);
 
-    if (error) {
-      console.error("Supabase error details:", error);
-      toast.error(`Failed to update team member: ${error.message}`);
-    } else {
-      setTeamMembers(
-        teamMembers.map((member) =>
-          member.id === editingMember.id ? editingMember : member
-        )
-      );
-      setEditingMember(null);
-      toast.success("Team member updated successfully.");
+  const handleSave = async () => {
+    if (editingMember) {
+      const { error } = await supabase
+        .from("team")
+        .update({
+          name: editingMember.name,
+          head: editingMember.head,
+          info: editingMember.info,
+          image: editingMember.image,
+        })
+        .eq("id", editingMember.id);
+
+      if (error) {
+        console.error("Supabase error details:", error);
+        toast.error(`Failed to update team member: ${error.message}`);
+      } else {
+        setTeamMembers(
+          teamMembers.map((member) =>
+            member.id === editingMember.id ? editingMember : member
+          )
+        );
+        setEditingMember(null);
+        toast.success("Team member updated successfully.");
+      }
     }
   };
+
   const handleAddMember = async () => {
     if (
       !newMember.name ||
@@ -73,7 +77,8 @@ const AdminDashboard = () => {
       toast.error("Please fill in all fields.");
       return;
     }
-   const { data, error } = await supabase
+
+    const { data, error } = await supabase
       .from("team")
       .insert([newMember])
       .select();
@@ -90,6 +95,7 @@ const AdminDashboard = () => {
       toast.error("Failed to retrieve the new member after insertion.");
     }
   };
+
   return (
     <div>
       <div className={style.add}>
@@ -103,11 +109,13 @@ const AdminDashboard = () => {
             onClick={() => setShowAddForm(!showAddForm)}
           >
             {showAddForm ? "Hide Add Form" : "Add New Team Member"}
+            
           </button>
+          
         </div>
       </div>
       {showAddForm && (
-        <div className={style.inputs}>
+        <div className={style.inputs1}>
           <h2>Add New Team Member</h2>
           <input
             type="text"
@@ -171,7 +179,7 @@ const AdminDashboard = () => {
                 />
                 <textarea
                   rows="10"
-                  cols="30"
+                  cols="10"
                   type="text"
                   value={editingMember.info}
                   onChange={(e) =>
@@ -229,3 +237,6 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+
+
+

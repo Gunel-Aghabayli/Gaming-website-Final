@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"; // Import the translation hook
 import { Avatar, Dropdown, Menu } from "antd";
 import { useAuth } from "../../AuthContext";
 import { useAppContext } from "../../AppContext";
@@ -10,26 +10,19 @@ import style from "./Navbar.module.css";
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const { user, isLoggedIn, logOut, role } = useAuth(); 
+  const { user, isLoggedIn, logOut } = useAuth();
   const { cart, wishlist } = useAppContext();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation(); // Destructure the translation function
   const [language, setLanguage] = useState("ENG");
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   const changeLanguage = (lang, abbreviation) => {
     i18n.changeLanguage(lang);
     setLanguage(abbreviation);
   };
-
-  const menu = (
-    <Menu>
-      <Menu.Item key="1" onClick={logOut}>
-        Log Out
-      </Menu.Item>
-    </Menu>
-  );
-  console.log("User Role:", role);
 
   const languageMenu = (
     <Menu className={style.lang}>
@@ -41,6 +34,35 @@ const Navbar = () => {
       </Menu.Item>
     </Menu>
   );
+
+  const menu = (
+    <Menu className={style.menu2}>
+      {user?.email === "admin@gmail.com" ? (
+        <div>
+          <Menu.Item key="admin">
+            <NavLink to="/admin">{t('admin_page')}</NavLink> {/* Translated */}
+          </Menu.Item>
+        </div>
+      ) : user ? (
+        <div>
+          {user && (
+            <div>
+              <Menu.Item key="welcome">
+                <span>Welcome, {user.email.split("agab")[0].toUpperCase()}</span>
+              </Menu.Item>
+              <Menu.Item key="email">
+                <span>{user.email}</span>
+              </Menu.Item>
+            </div>
+          )}
+        </div>
+      ) : null}
+      <Menu.Item key="logout" onClick={logOut}>
+        {t('log_out')} {/* Translated */}
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
     <div>
       <div className={`${style.navbar} ${darkMode ? style.dark : ""}`}>
@@ -52,19 +74,19 @@ const Navbar = () => {
             <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/logo.svg" />
           </a>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">{t('home')}</NavLink> {/* Translated */}
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about">{t('about')}</NavLink> {/* Translated */}
           </li>
           <li>
-            <NavLink to="/shop">Shop</NavLink>
+            <NavLink to="/shop">{t('shop')}</NavLink> {/* Translated */}
           </li>
           <li>
-            <NavLink to="/faq">FAQ</NavLink>
+            <NavLink to="/faq">{t('faq')}</NavLink> {/* Translated */}
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact">{t('contact')}</NavLink> {/* Translated */}
           </li>
           <li onClick={toggleDarkMode} className={style.toggle}>
             {darkMode ? (

@@ -34,7 +34,7 @@ const ContactCom = () => {
       <div className={style.bgabout}>
         <Navbar />
         <div className={style.content}>
-          <h1>
+          <h1 data-aos="fade-down" data-aos-delay="200">
             CONTACT <span>US</span>
           </h1>
         </div>
@@ -50,7 +50,7 @@ const ContactCom = () => {
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <div className={style.office}>
+      <div data-aos="fade-left" data-aos-delay="200" className={style.office}>
         <h1>OUR OFFICE</h1>
         <h4>175 Mittchell River Apt.616, US.</h4>
         <p>Office Headquarters</p>
@@ -61,7 +61,7 @@ const ContactCom = () => {
         <h4>Monday - Saturday</h4>
         <p>Working time</p>
       </div>
-      <div className={style.form}>
+      <div data-aos="fade-down" data-aos-delay="200" className={style.form}>
         <hr />
         <p>FEEDBACK FORM</p>
         <form onSubmit={handleSubmit}>
@@ -116,8 +116,8 @@ const ContactCom = () => {
         </form>
       </div>
       <div className={style.support}> 
-        <h2>CONTACT SUPPORT</h2>
-        <div className={style.imgs}>
+        <h2 data-aos="zoom-in" data-aos-delay="200">CONTACT SUPPORT</h2>
+        <div data-aos="fade-up" data-aos-delay="200" className={style.imgs}>
           <div className={style.image1}>
             <img src="https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_ava1.png" />
             <h4>Carl Lee</h4>

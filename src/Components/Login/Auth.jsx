@@ -26,11 +26,11 @@ const Auth = () => {
         if (signInError) throw new Error(signInError.message);
 
         const { data: session } = await supabase.auth.getSession();
-        const userRole = session?.session?.user?.email; // Adjust according to your actual role management
+        const userRole = session?.session?.user?.email;
 
         if (userRole === "admin@gmail.com") {
           toast.success("Logged in as Admin!");
-          navigate("/admin");
+          navigate("/");
         } else {
           toast.success("Sign In successfully");
           navigate("/");

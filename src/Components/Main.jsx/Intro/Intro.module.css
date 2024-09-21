@@ -210,8 +210,11 @@ button:hover {
 }
 
 .darkMode .explore {
-  background-color: #1e1e1e; /* Dark background */
-  color: #fff; /* Light text */
+  background-color: #1e1e1e; 
+  color: #fff;
+  padding-bottom: 170px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .darkMode .explore h3,
 .darkMode .explore p {
@@ -227,16 +230,23 @@ button:hover {
 .darkMode .explore h1{
   -webkit-text-stroke-color: rgb(252, 249, 249);
 }
+.darkMode .overlay{
+  background: linear-gradient(rgba(7, 7, 7, 0.5), rgba(13, 13, 14, 0.5)), url("https://demo2.wpopal.com/gamico/wp-content/uploads/2023/12/h2_bg2.jpg");
+  opacity: 0.8;
+}
+
 
 @media (max-width: 800px) {
   .explore {
-    width: 1498px;
+    width: 1500px;
+    
   }
   .overlay {
     width: 1540px;
     display: flex;
     justify-content: space-between;
   }
+
   #bgphoto {
     width: 1530px;
   }
@@ -261,6 +271,11 @@ button:hover {
     width: 400px;
     padding: 30px;
     left: 550px;
+  }
+  .darkMode .explore{
+    background-color: #1e1e1e; 
+    padding-bottom: 180px;
+    
   }
 }
 @media (max-width: 500px) {
@@ -293,5 +308,10 @@ button:hover {
     width: 400px;
     padding: 30px;
     left: 550px;
+  }
+  .darkMode .explore{
+    background-color: #1e1e1e; 
+    padding-bottom: 202px;
+    
   }
 }

@@ -144,7 +144,7 @@ const Testimonials = () => {
         </Marquee>
       </div>
      <div className={style.shopSlice}>
-      <h2 data-aos="fade-down" data-aos-delay="200" className={style.featured}>
+      <h2  className={style.featured}>
         FEATURED <span>PRODUCTS</span>
       </h2>
       <div className={style.shopBox}>

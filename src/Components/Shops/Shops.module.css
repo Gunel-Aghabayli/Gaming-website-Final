@@ -211,6 +211,9 @@ footer {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.darkMode{
+  background-color: #403e3e;
+}
 .darkMode .butSearch{
   background-color: #fff;
   color: #000;
@@ -220,6 +223,10 @@ footer {
 }
 .darkMode .box a{
   color: #fff;
+}
+.darkMode .bgabout{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("https://demo2.wpopal.com/gamico/wp-content/uploads/2024/04/shop_br.jpg");
 }
 
 @media (max-width: 800px) {
@@ -235,6 +242,13 @@ footer {
   }
   .shopBox {
     margin-left: 230px;
+  }
+  .darkMode {
+    width: 1540px;
+   background-color: #403e3e;
+  }
+  .darkMode .filterSection{
+    margin-left: 80px;
   }
 }
 @media (max-width: 500px) {

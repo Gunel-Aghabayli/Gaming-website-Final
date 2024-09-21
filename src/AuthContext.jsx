@@ -21,7 +21,6 @@ export const AuthProvider = ({ children }) => {
         setIsLoggedIn(!!currentUser);
       }
     );
-
     return () => {
       authListener?.subscription?.unsubscribe();
     };
@@ -39,6 +38,7 @@ export const AuthProvider = ({ children }) => {
       pauseOnHover: true, 
       draggable: true, 
       progress: undefined, 
+      
       theme: "colored", 
     });
   };

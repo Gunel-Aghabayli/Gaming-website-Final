@@ -352,10 +352,7 @@
 .darkMode .btn:hover {
   background-color: rgb(45, 244, 161);
 }
-/* .darkMode .view{
-  margin-top: 30px;
-  margin-left: 50px;
-} */
+
 @media (max-width: 800px) {
   .reviews {
     width: 1540px;
@@ -365,6 +362,14 @@
   }
   .featured {
     margin-left: 340px;
+  }
+  .darkMode .shopBox{
+    width: 1540px;
+    padding-bottom: 50px;
+  }
+  .darkMode .featured{
+    width: 1540px;
+    margin: 0;
   }
 }
 @media (max-width: 500px) {

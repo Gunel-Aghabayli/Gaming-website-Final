@@ -4,7 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "../../AppContext";
 import Navbar from "../Navbar/Navbar";
 import { toast } from "react-toastify";
+import { useTheme } from "../../ThemeContext";
 const Wish = () => {
+  const { darkMode } = useTheme();
   const { wishlist, cart, addToCart, removeFromWishlist } = useAppContext();
   const navigate = useNavigate();
   const isProductInCart = (product) => {
@@ -18,7 +20,7 @@ const Wish = () => {
     }
   };
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div>
         <div className={style.bgabout}>
           <Navbar />

@@ -6,8 +6,9 @@ import { useEffect } from "react";
 import { supabase } from "../../supabase.js";
 import Navbar from "../Navbar/Navbar.jsx";
 import { Link, useSearchParams } from "react-router-dom";
-
+import { useTheme } from "../../ThemeContext";
 const TeamCom = () => {
+  const { darkMode } = useTheme();
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
   const team = useSelector((state) => state.team);
@@ -31,7 +32,7 @@ const TeamCom = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div className={style.bgabout}>
         <Navbar />
         <div className={style.content}>

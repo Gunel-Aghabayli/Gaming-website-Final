@@ -164,6 +164,9 @@
     top: 40px;
     left: 67rem;
   }
+  .darkMode{
+    
+  }
 }
 
 /* //navbar// */
@@ -455,6 +458,15 @@ ul li a:hover {
   }
   .burger {
     display: block;
+  }
+  .darkMode .team{
+    width: 1540px;
+  }
+  .darkMode .value{
+    width: 1540px;
+  }
+  .darkMode .diversty{
+    width: 1540px;
   }
 }
 

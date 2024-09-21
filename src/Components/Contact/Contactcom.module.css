@@ -149,6 +149,16 @@
 }
 .darkMode .contact{
   background-color: #403e3e;
+  padding-bottom: 1060px;
+}
+.darkMode .form p{
+  color: #fff;
+}
+.darkMode .support h2{
+  color: #fff;
+}
+.darkMode .image1 h4{
+  color: #fff;
 }
 .darkMode .office{
   background-color: #403e3e;
@@ -159,21 +169,21 @@
 .darkMode .office h4{
   color: #fff;
 }
-.darkMode .input input{
+/* .darkMode .input input{
   background-color: #403e3e;
 }
 .darkMode .text textarea{
   background-color: #403e3e;
-}
+} */
 .darkMode .form hr{
   background-color: #fff;
 }
-.darkMode .image1{
+/* .darkMode .image1{
   background-color: #403e3e;
-}
-.darkMode .image1 h4{
+} */
+/* .darkMode .image1 h4{
   color: #fff;
-}
+} */
 @media (max-width: 800px) {
   .bgabout {
     width: 1540px;
@@ -181,6 +191,7 @@
   .contact {
     width: 1540px;
   }
+
   .office {
     position: absolute;
     width: 400px;

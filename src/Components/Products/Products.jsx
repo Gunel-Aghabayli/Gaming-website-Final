@@ -11,8 +11,9 @@ import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../../AppContext";
 import { toast } from "react-toastify";
-
+import { useTheme } from "../../ThemeContext";
 const Products = () => {
+  const { darkMode } = useTheme();
   const [searchParam] = useSearchParams();
   const selectedProductID = searchParam.get("product");
   const [product, setProduct] = useState(null);
@@ -86,7 +87,7 @@ const Products = () => {
     );
   };
   return (
-    <div>
+    <div className={darkMode ? style.darkMode : style.lightMode}>
       <div className={style.bgabout}>
         <Navbar />
         <div className={style.content}>
@@ -101,7 +102,7 @@ const Products = () => {
         </div>
         <div className={style.items}>
           <div className={style.name}>{product.title}</div>
-          <div>{renderStars(product.isNew)}</div>
+          <div className={style.line2}>{renderStars(product.isNew)}</div>
           <div className={style.line}></div>
           <div className={style.describe}>{product.description}</div>
           

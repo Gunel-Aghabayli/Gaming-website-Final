@@ -19,14 +19,18 @@ import Team from "./Pages/Team";
 import TeamDetail from "./Pages/TeamDetail";
 import AdminPage from "./Pages/AdminPage";
 import Checkout from "./Pages/Checkout";
-import { useTranslation } from 'react-i18next';
+import i18n from "./i18n";
+import { I18nextProvider } from "react-i18next";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 const App = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true }); 
   }, []);
-return (
+
+  return (
+    <I18nextProvider i18n={i18n}>
     <ThemeProvider>
       <BrowserRouter>
         <Routes>
@@ -49,6 +53,7 @@ return (
         <ToastContainer />
       </BrowserRouter>
     </ThemeProvider>
+    </I18nextProvider>
   );
 };
 

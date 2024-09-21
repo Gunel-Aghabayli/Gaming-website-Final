@@ -145,6 +145,12 @@ footer {
 .footerBottom span {
   color: #fff;
 }
+.darkMode{
+  background-color: #403e3e;
+}
+.darkMode .allTeam .header a{
+  color: rgb(45, 244, 161);
+}
 
 @media (max-width: 800px) {
   .container {
@@ -154,6 +160,10 @@ footer {
     width: 1540px;
   }
   .allTeam{
+    width: 1540px;
+  }
+  .darkMode{
+    background-color: #403e3e;
     width: 1540px;
   }
 }

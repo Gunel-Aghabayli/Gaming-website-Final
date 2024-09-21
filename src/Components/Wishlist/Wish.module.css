@@ -180,7 +180,10 @@ footer {
   font-size: 30px;
   display: flex;
   justify-content: center;
-
+}
+.darkMode{
+  background-color: #403e3e;
+  color: #fff;
 }
 
 @media (max-width: 800px) {
@@ -197,6 +200,10 @@ footer {
  .wishlist a{
   font-size: 20px;
  }
+ .darkMode{
+  background-color: #403e3e;
+  width: 1540px;
+}
 }
 @media (max-width:500px){
  .btn2{

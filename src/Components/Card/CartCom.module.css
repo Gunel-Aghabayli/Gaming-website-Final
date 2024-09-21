@@ -72,6 +72,7 @@
   flex-direction: column;
   gap: 50px;
 }
+
 .btn3 {
   font-family: "Unbounded", sans-serif;
   padding: 7px;
@@ -79,23 +80,32 @@
   border: none;
   background-color: rgb(45, 244, 161);
 }
-.quantity{
+
+.quantity {
   margin-left: 20px;
   display: flex;
   flex-direction: row;
   gap: 10px;
   align-items: center;
 }
-.totalPrice{
-  margin-left: 550px;
+.totalPrice {
+  margin-left: 500px;
   font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
 }
-.quantity button{
+.btn4{
+  font-family: "Unbounded", sans-serif;
+  height: 40px;
+}
+.quantity button {
   padding: 7px 20px;
   border: none;
   font-size: 25px;
 }
-.emptyCart{
+.emptyCart {
   margin-top: 50px;
   width: 90rem;
   display: flex;
@@ -103,7 +113,7 @@
   flex-direction: column;
   align-items: center;
 }
-.emptyCart a{
+.emptyCart a {
   background-color: rgb(45, 244, 161);
   text-decoration: none;
   padding: 12px 24px;
@@ -209,45 +219,56 @@ footer {
   display: flex;
   justify-content: center;
 }
-
+.darkMode{
+  background-color: #403e3e;
+  color: #fff;
+}
+.darkMode .butons div a{
+  margin-left: 20px;
+ text-align: start;
+}
 @media (max-width: 800px) {
   .container {
     width: 1540px;
   }
-  .bgabout{
+  .bgabout {
     width: 1540px;
   }
-  .totalPrice{
+  .totalPrice {
     width: 400px;
   }
-  .allBoxes{
+  .allBoxes {
     width: 1500px;
   }
-  .quantity{
+  .quantity {
     width: 300px;
   }
-  .totalPrice{
+  .totalPrice {
     width: 600px;
   }
+  .darkMode{
+    background-color: #403e3e;
+    width: 1540px;
+  }
 }
-@media (max-width: 500px){
-  .allBoxes{
+@media (max-width: 500px) {
+  .allBoxes {
     width: 1400px;
     margin-left: 25px;
     gap: 30px;
   }
-  .cart{
+  .cart {
     width: 700px;
   }
-  .quantity{
+  .quantity {
     width: 100px;
   }
-  .btn3{
+  .btn3 {
     width: 170px;
     height: 60px;
     font-size: 17px;
   }
-  .butons a{
+  .butons a {
     font-size: 27px;
   }
 }
